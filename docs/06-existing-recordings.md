@@ -154,7 +154,8 @@ The properties compare favourably with retroactive signing:
   expands indefinitely.
 
 Established mechanisms exist, including RFC 3161 timestamping and transparency logs in the
-style of Sigstore's Rekor.
+style of Sigstore's Rekor. See [07-timestamp-log.md](07-timestamp-log.md) for how the log
+works, which material it helps, and why coverage can be measured per catalogue.
 
 **This is actionable independently of the rest of the protocol** and gets more valuable the
 earlier it starts, which argues for treating it as a first deliverable rather than a later

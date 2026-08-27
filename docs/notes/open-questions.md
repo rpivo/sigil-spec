@@ -76,6 +76,16 @@ See [../06-existing-recordings.md](../06-existing-recordings.md).
 33. How a verifier presents a chain mixing capture attestations, timestamps, and provenance
     assertions, which is the normal case for catalogue material.
 
+## The timestamp log
+
+See [../07-timestamp-log.md](../07-timestamp-log.md).
+
+34. Whether to operate a log or rely on an existing service, and the durability trade-offs.
+35. Exact hashing, perceptual fingerprinting, or both, and what each contributes as evidence.
+36. What identifying metadata accompanies an entry, and the privacy consequences of making it
+    public.
+37. What a verifier does with a fingerprint match that is not an exact hash match.
+
 ## Governance
 
 11. Trust model. Certificate hierarchy, signer registry, or decentralized.
