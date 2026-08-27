@@ -8,7 +8,7 @@ How an [attestation](../glossary.md#terms-sigil-defines) is embedded in audio.
 
 - Embedding domain and technique.
 - Payload capacity per unit time.
-- Synchronization and how a [verifier](../glossary.md#terms-sigil-defines) locates an attestation in an arbitrary excerpt (R6).
+- Synchronization and how a [verifier](../glossary.md#terms-sigil-defines) locates an [attestation](../glossary.md#terms-sigil-defines) in an arbitrary excerpt (R6).
 - Behavior on silence, near-silence, and sparse material. Solo piano and ambient recordings
   are the difficult cases for [perceptual masking](../glossary.md#audio-and-video-production) and should be treated as primary test
   material rather than edge cases.

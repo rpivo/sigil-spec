@@ -18,13 +18,13 @@ A guitar recording, tracked through to release:
 1. A guitar is played, connected by an analog instrument cable.
 2. An audio interface converts the signal to digital.
 3. The interface passes audio to a [DAW](glossary.md#audio-and-video-production), which verifies the interface as the source.
-4. The DAW exports a mixdown carrying an [attestation](glossary.md#terms-sigil-defines) of the session's sources.
+4. The [DAW](glossary.md#audio-and-video-production) exports a mixdown carrying an [attestation](glossary.md#terms-sigil-defines) of the session's sources.
 5. A distribution platform verifies the export on upload.
 6. The result describes what tools were involved, including whether any were generative.
 
 ## Where the chain can start
 
-**Attestation begins at the analog-to-digital boundary.** The [A/D converter](glossary.md#audio-and-video-production) is the first
+**[Attestation](glossary.md#terms-sigil-defines) begins at the analog-to-digital boundary.** The [A/D converter](glossary.md#audio-and-video-production) is the first
 device in a conventional signal path that holds samples and can therefore compute over them.
 
 This rules out the analog links. A passive instrument cable is two conductors and a shield.
@@ -49,7 +49,7 @@ microphone, or a converter output patched into an instrument input, is not disti
 from a live performance **by the interface itself**.
 
 It may still be distinguishable further along the chain. A robust audio [watermark](glossary.md#provenance-and-content-authenticity) survives a
-digital-to-analog-to-digital round trip: audience measurement watermarks are engineered to
+digital-to-analog-to-digital round trip: audience measurement [watermarks](glossary.md#provenance-and-content-authenticity) are engineered to
 survive a television speaker playing into a room and being captured by a microphone, which is
 a far harsher path than a line-level cable. So content that was watermarked at generation
 carries that mark through analog re-capture, and a [verifier](glossary.md#terms-sigil-defines) downstream can still recover it.
@@ -70,8 +70,8 @@ participate.
 > These samples entered the digital domain through this device at this time.
 
 It does not claim a human performed them. This bound is not a defect of the design, it is a
-property of analog inputs, and it is the same limitation C2PA capture hardware operates
-under: a signed photograph may be a photograph of a screen. Capture attestation remains
+property of analog inputs, and it is the same limitation [C2PA](glossary.md#organizations-and-standards-bodies) capture hardware operates
+under: a signed photograph may be a photograph of a screen. [Capture attestation](glossary.md#provenance-and-content-authenticity) remains
 valuable, and overstating it is the failure mode to avoid. See
 [03-threat-model.md](03-threat-model.md).
 
@@ -136,7 +136,7 @@ The chain degrades gracefully, and each tier is independently deployable.
 | Tier | Requires | Supported claim |
 |---|---|---|
 | **0. Export attestation** | A DAW and a receiving platform. Software only. | The DAW reports this session's sources as it observed them. |
-| **1. [Attested capture](glossary.md#provenance-and-content-authenticity)** | Interface hardware with a secure element and provisioned keys. | Samples demonstrably entered through an identified device. |
+| **1. [Attested capture](glossary.md#provenance-and-content-authenticity)** | Interface hardware with a [secure element](glossary.md#audio-and-video-production) and provisioned keys. | Samples demonstrably entered through an identified device. |
 | **2. Extended chain** | Digital capture at the instrument. | Custody from digital source to release. |
 
 Tier 0 requires no hardware and delivers most of the practical value, which makes it the
@@ -145,7 +145,7 @@ makers, interface manufacturers, DAW vendors, and platforms simultaneously, and 
 correspondingly unlikely to move.
 
 **C2PA already defines [assurance levels](glossary.md#provenance-and-content-authenticity)** expressing how strongly an attestation is
-hardware-backed, with Google integrating Assurance Level 2 into Pixel camera hardware.
+hardware-backed, with Google integrating [Assurance Level](glossary.md#provenance-and-content-authenticity) 2 into Pixel camera hardware.
 Mapping these tiers onto that existing vocabulary is preferable to defining a competing one.
 
 ## Recordings that predate the chain
@@ -160,8 +160,8 @@ Tracked in [notes/open-questions.md](notes/open-questions.md).
 
 - Whether each stage re-signs, vouching for what it verified, or whether attestations
   accumulate independently and are evaluated together.
-- How a chain summary stays within carrier capacity as sessions grow.
-- What a verifier reports when a chain is partially attested, which is the common case.
+- How a chain summary stays within [carrier](glossary.md#terms-sigil-defines) capacity as sessions grow.
+- What a [verifier](glossary.md#terms-sigil-defines) reports when a chain is partially attested, which is the common case.
 - Whether plugin and virtual instrument vendors can be brought in, and what a plugin
   attestation would even assert.
 - How this survives [stem](glossary.md#audio-and-video-production) delivery, where a release is assembled from separately exported

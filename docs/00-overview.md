@@ -13,9 +13,11 @@ to attach and awkward to omit, not to determine whether any given file was gener
 A creator, tool, or model signs a small structured claim about how a recording was made.
 That signature is embedded into the signal itself rather than into the file container, at a
 level below human perception. A [verifier](glossary.md#terms-sigil-defines) reading the file can recover the signature, check
-it against a known [public key](glossary.md#cryptography-and-specification), and report what the [signer](glossary.md#terms-sigil-defines) claimed. Because the attestation
-travels in the signal and is self-contained, it survives container changes and verifies
-without a network lookup.
+it against a known [public key](glossary.md#cryptography-and-specification), and report what the [signer](glossary.md#terms-sigil-defines) claimed. Because the [attestation](glossary.md#terms-sigil-defines)
+travels in the signal and is self-contained, it survives container changes and needs no
+per-asset [manifest](glossary.md#provenance-and-content-authenticity) repository to remain checkable. Key distribution is still required; see
+[08-soft-binding-vs-signal-carried.md](08-soft-binding-vs-signal-carried.md) for what that
+does and does not buy.
 
 ## Two mechanisms, often confused
 
@@ -26,7 +28,7 @@ discussed side by side. They are independent, and each works without the other.
 |---|---|---|
 | **Where it lives** | Inside the audio, as an imperceptible [carrier](glossary.md#terms-sigil-defines) | On a public record, external to the file |
 | **Travels with the file** | Yes | No |
-| **What it says** | A signer claims something about this recording | Content with this hash existed by this date |
+| **What it says** | A [signer](glossary.md#terms-sigil-defines) claims something about this recording | Content with this hash existed by this date |
 | **Verifying it** | Offline, no lookup required | Requires querying the log |
 | **Who creates it** | A capture device, a [DAW](glossary.md#audio-and-video-production), or an accredited signer | A platform, label, or archive |
 | **When it becomes useful** | Once other vendors adopt it | Immediately, and compounds thereafter |
@@ -57,7 +59,7 @@ Three outcomes, and the distinction between the second and third matters:
 
 1. **Valid signature.** A recognized signer made this claim about this recording.
 2. **No signature found.** Says nothing. The file may predate the protocol, may have come
-   from a non-adopting tool, or may have been processed in a way that destroyed the carrier.
+   from a non-adopting tool, or may have been processed in a way that destroyed the [carrier](glossary.md#terms-sigil-defines).
 3. **Signature present but invalid.** The recording was altered after signing, or the
    signature was forged or corrupted.
 
@@ -81,7 +83,7 @@ Sigil is a carrier and attestation layer. It is complementary to, not a replacem
 - **[C2PA](glossary.md#organizations-and-standards-bodies)**, which provides a richer provenance model and an established [manifest](glossary.md#provenance-and-content-authenticity) format.
   Sigil could plausibly serve as a registered [soft binding](glossary.md#provenance-and-content-authenticity) algorithm within it.
 - **[DDEX](glossary.md#organizations-and-standards-bodies)**, which provides the music industry vocabulary for AI involvement and the delivery
-  pipeline that carries it. Sigil could make a DDEX disclosure verifiable rather than merely
+  pipeline that carries it. Sigil could make a [DDEX](glossary.md#organizations-and-standards-bodies) disclosure verifiable rather than merely
   declared.
 - **[SMPTE](glossary.md#organizations-and-standards-bodies)**, which governs carriage in professional film and television workflows, and which
   is actively studying how provenance data should flow through [MXF](glossary.md#identifiers-and-file-formats).

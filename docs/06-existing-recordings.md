@@ -49,7 +49,7 @@ better sequenced after something is running. See [spec/04-keys-and-trust.md](spe
 
 ### Process evaluates evidence, it does not create it
 
-Where corroboration exists, a body has real material to assess: ISRC registration, copyright
+Where corroboration exists, a body has real material to assess: [ISRC](glossary.md#identifiers-and-file-formats) registration, copyright
 deposit, physical pressings, distribution and chart records. Rigorous process, defensible
 outcome.
 
@@ -73,7 +73,7 @@ than to masters, which raises the question of which version is authoritative.
 
 ## Learning from the certificate authority failures
 
-The design here shares a structural property with the Web PKI: **any accredited signer could
+The design here shares a structural property with the Web PKI: **any accredited [signer](glossary.md#terms-sigil-defines) could
 vouch for any recording.** That property, not weak cryptography, produced that ecosystem's
 worst failures. DigiNotar was compromised in 2011 and issued fraudulent certificates for
 Google domains, used against users in Iran, and the company collapsed. Symantec was
@@ -100,7 +100,7 @@ Governance design should separate those roles wherever the structure permits.
 It made every issuance public and append-only, so misissuance became detectable and
 attributable after the fact. Browsers now require it.
 
-Applied here: **every retroactive attestation is logged publicly, permanently, with its
+Applied here: **every retroactive [attestation](glossary.md#terms-sigil-defines) is logged publicly, permanently, with its
 evidence basis and its accredited signer.** A bad vouching cannot be prevented. It can be made
 discoverable, patterns of them visible, and each signer's record public. That converts an
 unfalsifiable claim into an auditable one.
@@ -165,13 +165,13 @@ one.
 
 Two limits persist regardless of how widely the protocol is adopted or how much time passes.
 
-**The unsigned population never becomes homogeneous.** Generators that decline to watermark,
+**The unsigned population never becomes homogeneous.** Generators that decline to [watermark](glossary.md#provenance-and-content-authenticity),
 including open-weights models run locally, keep producing unmarked audio indefinitely. The
 unsigned set therefore always mixes the historical catalogue with the deliberately evasive,
 and absence never becomes informative. There is no adoption threshold that changes this. See
 [03-threat-model.md](03-threat-model.md).
 
-**A signature never means human.** A capture attestation states that samples passed through a
+**A signature never means human.** A [capture attestation](glossary.md#provenance-and-content-authenticity) states that samples passed through a
 device. Generated audio played through an [attested capture](glossary.md#provenance-and-content-authenticity) chain produces a valid signature.
 Universal adoption makes this claim ubiquitous rather than making it stronger.
 
@@ -186,7 +186,7 @@ does not turn it into one.
 
 ## Open questions
 
-- Whether retroactive provenance assertions belong in this protocol at all, or whether they
+- Whether retroactive [provenance assertions](glossary.md#cryptography-and-specification) belong in this protocol at all, or whether they
   are better left to existing rights and registration systems.
 - What corroborating evidence a provenance assertion should be required to carry, and whether
   the standard differs between corroborated and uncorroborated material.
@@ -199,5 +199,5 @@ does not turn it into one.
   rather than discovering.
 - Whether timestamping should be specified here or simply recommended, given it is useful
   independently of the [carrier](glossary.md#terms-sigil-defines).
-- How a verifier presents an attestation chain mixing all three classes, which will be the
+- How a [verifier](glossary.md#terms-sigil-defines) presents an attestation chain mixing all three classes, which will be the
   normal case for catalogue material.

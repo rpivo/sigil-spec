@@ -8,7 +8,7 @@ No document in `docs/spec/` is [normative](../glossary.md#cryptography-and-speci
 something must satisfy in order to conform. Nothing here is stable enough to implement
 against. When a section stabilizes, replace its banner with a version and status line.
 
-Note that normative is a property of the text rather than a claim about the document's
+Note that [normative](../glossary.md#cryptography-and-specification) is a property of the text rather than a claim about the document's
 standing. A specification can be entirely normative and adopted by no one. See
 [../glossary.md](../glossary.md).
 
@@ -29,18 +29,18 @@ the media production and cryptography sides, is collected in
 the owning body's specification governs.
 
 Terms are chosen to avoid collision with existing standards. Note that both [C2PA](../glossary.md#organizations-and-standards-bodies) and [SMPTE](../glossary.md#organizations-and-standards-bodies)
-use *binding* as a term of art, C2PA for [soft bindings](../glossary.md#provenance-and-content-authenticity) and SMPTE for Open Binding of
+use *binding* as a term of art, [C2PA](../glossary.md#organizations-and-standards-bodies) for [soft bindings](../glossary.md#provenance-and-content-authenticity) and [SMPTE](../glossary.md#organizations-and-standards-bodies) for Open Binding of
 IDentifiers, so this document avoids the bare word.
 
 | Term | Meaning |
 |---|---|
 | **Claim** | The structured assertion a [signer](../glossary.md#terms-sigil-defines) makes about a recording. |
 | **[Attestation](../glossary.md#terms-sigil-defines)** | A claim plus its signature and [content anchor](../glossary.md#terms-sigil-defines). |
-| **Content anchor** | The content-derived value that ties an attestation to a specific recording. |
+| **[Content anchor](../glossary.md#terms-sigil-defines)** | The content-derived value that ties an [attestation](../glossary.md#terms-sigil-defines) to a specific recording. |
 | **[Carrier](../glossary.md#terms-sigil-defines)** | The imperceptible channel in the signal that conveys an attestation. |
-| **Signer** | The party whose key signs a claim. A tool, model operator, studio, or individual. |
+| **[Signer](../glossary.md#terms-sigil-defines)** | The party whose key signs a claim. A tool, model operator, studio, or individual. |
 | **[Verifier](../glossary.md#terms-sigil-defines)** | An implementation that recovers and checks an attestation. |
-| **Recovery** | Extracting an attestation from a carrier. Distinct from verifying it. |
+| **Recovery** | Extracting an attestation from a [carrier](../glossary.md#terms-sigil-defines). Distinct from verifying it. |
 
 ## Open
 

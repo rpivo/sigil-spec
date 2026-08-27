@@ -42,7 +42,7 @@ complete track and is in direct tension with R6, recovery from an excerpt, in
 [../04-requirements.md](../04-requirements.md).
 
 The likely finding is that a hybrid is required: a short index carried in the signal with the
-full [attestation](../glossary.md#terms-sigil-defines) resolved from the log. That is closer to C2PA's soft binding than the
+full [attestation](../glossary.md#terms-sigil-defines) resolved from the log. That is closer to [C2PA](../glossary.md#organizations-and-standards-bodies)'s [soft binding](../glossary.md#provenance-and-content-authenticity) than the
 original premise and is much better discovered early than late.
 
 ### Phase 1. Operate the log
@@ -73,9 +73,9 @@ domain fit, not by urgency; only [SMPTE](../glossary.md#organizations-and-standa
 
 | Body | Domain | Fit | Barrier |
 |---|---|---|---|
-| **DDEX** | Music value chain, metadata and delivery | Highest substantive fit | Organisational membership |
+| **[DDEX](../glossary.md#organizations-and-standards-bodies)** | Music value chain, metadata and delivery | Highest substantive fit | Organisational membership |
 | **[AES](../glossary.md#organizations-and-standards-bodies)** | Professional audio engineering | The technical audio layer | Lowest. Individual, open, anyone may propose work |
-| **SMPTE** | Film and television, including audio for both | The film half, plus the ST 2112 precedent | ~$775/year for non-members |
+| **[SMPTE](../glossary.md#organizations-and-standards-bodies)** | Film and television, including audio for both | The film half, plus the ST 2112 precedent | ~$775/year for non-members |
 | **C2PA** | Cross-industry provenance | Interop target rather than a venue | Free and open |
 
 ### AES, lowest barrier
@@ -84,7 +84,7 @@ The Audio Engineering Society is the professional audio standards body, and the 
 accessible route available.
 
 - AESSC working group membership is open to all directly and materially affected individuals.
-  AES membership is encouraged but not required.
+  [AES](../glossary.md#organizations-and-standards-bodies) membership is encouraged but not required.
 - **Initiation of work may be proposed by any person**, member or not, provided the proposal
   falls within audio engineering or allied arts and sciences.
 - Around eleven working groups and 1,200 registered participants, covering digital audio
@@ -141,7 +141,7 @@ Conformance costs, where they arise, are set by certificate authorities rather t
 
 **Watermarking vendors are partners rather than competitors.** The [carrier](../glossary.md#terms-sigil-defines) does not need to be
 invented; what is missing is a standardized cryptographic payload to put inside one. Verance,
-Digimarc and Kantar each operate proven carriers and each has commercial reason to want such a
+Digimarc and Kantar each operate proven [carriers](../glossary.md#terms-sigil-defines) and each has commercial reason to want such a
 payload standardized on their technology.
 
 Joseph Winograd of Verance co-authored the closest prior art, arXiv 2405.12336. Engaging

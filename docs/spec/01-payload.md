@@ -11,9 +11,9 @@ What an [attestation](../glossary.md#terms-sigil-defines) contains.
   alignment with existing signed-object tooling.
 - **Claim vocabulary.** Strong argument for aligning with the [DDEX](../glossary.md#organizations-and-standards-bodies) AI disclosure categories
   (AI vocals, AI instrumentation, AI composition, AI post-production, AI lyrical content) so
-  a Sigil attestation can make an existing DDEX declaration verifiable rather than
+  a Sigil [attestation](../glossary.md#terms-sigil-defines) can make an existing [DDEX](../glossary.md#organizations-and-standards-bodies) declaration verifiable rather than
   introducing a competing taxonomy. See [06-interop.md](06-interop.md).
-- **[Signer](../glossary.md#terms-sigil-defines) identity.** How a signer is named, and how that maps to key lookup.
+- **[Signer](../glossary.md#terms-sigil-defines) identity.** How a [signer](../glossary.md#terms-sigil-defines) is named, and how that maps to key lookup.
 - **Timestamp.** Whether to include one, and whether it needs to be independently attested.
 - **Versioning.** Required by R11 for [algorithm agility](../glossary.md#cryptography-and-specification).
 - **[Content anchor](../glossary.md#terms-sigil-defines).** The hardest part. See [../03-threat-model.md](../03-threat-model.md).

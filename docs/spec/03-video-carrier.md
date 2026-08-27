@@ -12,7 +12,7 @@ How an [attestation](../glossary.md#terms-sigil-defines) is embedded in video.
   broadcast transmission chain that [ATSC](../glossary.md#organizations-and-standards-bodies) A/335 targets.
 - Behavior under crop, scale, and [letterbox](../glossary.md#audio-and-video-production), which have no clean audio analogue and are
   routine in delivery.
-- Whether an attestation must be recoverable from a single frame or requires a sequence.
+- Whether an [attestation](../glossary.md#terms-sigil-defines) must be recoverable from a single frame or requires a sequence.
 
 ## Open
 

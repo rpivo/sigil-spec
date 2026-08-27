@@ -21,7 +21,7 @@ follows is why the existing systems do not achieve that.
 widely adopted provenance system in existence, and the criticism that follows is narrow: the
 binding lives in a layer that routine processing discards.
 
-Any tool that re-encodes a file without C2PA awareness drops the manifest. This is not an
+Any tool that re-encodes a file without [C2PA](glossary.md#organizations-and-standards-bodies) awareness drops the [manifest](glossary.md#provenance-and-content-authenticity). This is not an
 edge case in music and film. A recording is bounced, mastered, format converted, delivered
 to a distributor, transcoded by a platform, and re-encoded for [adaptive streaming](glossary.md#audio-and-video-production). Consumer
 platforms compound it: several major messaging and social services re-encode uploads and
@@ -43,7 +43,7 @@ It is self-reported. A rightsholder states what happened and the statement propa
 is no signature, no binding to the audio, and no way for a downstream party to check. It
 records a claim rather than establishing one.
 
-This is not a flaw in DDEX. Disclosure and verification are different problems, and DDEX
+This is not a flaw in [DDEX](glossary.md#organizations-and-standards-bodies). Disclosure and verification are different problems, and DDEX
 solved the one it set out to solve. But it means the music industry now has a well-defined
 place to put an answer, and no mechanism for making that answer trustworthy.
 

@@ -22,9 +22,9 @@ and [IPTC](glossary.md#organizations-and-standards-bodies). It has a formal [con
 embedded in the file container as [JUMBF](glossary.md#identifiers-and-file-formats). Each edit appends to the provenance chain.
 
 **Watermarking role.** [Watermarks](glossary.md#provenance-and-content-authenticity) and content fingerprints appear as *[soft bindings](glossary.md#provenance-and-content-authenticity)*, used to
-re-discover a manifest that has been stripped from a file. The [Soft Binding Resolution API](glossary.md#provenance-and-content-authenticity)
-gives clients a standard way to retrieve a manifest from a repository. Watermark vendors
-implement against an approved algorithm list. A manifest with one or more soft bindings is
+re-discover a [manifest](glossary.md#provenance-and-content-authenticity) that has been stripped from a file. The [Soft Binding Resolution API](glossary.md#provenance-and-content-authenticity)
+gives clients a standard way to retrieve a manifest from a repository. [Watermark](glossary.md#provenance-and-content-authenticity) vendors
+implement against an approved algorithm list. A manifest with one or more [soft bindings](glossary.md#provenance-and-content-authenticity) is
 termed a [Durable Content Credential](glossary.md#provenance-and-content-authenticity).
 
 **Where it stops.**
@@ -66,7 +66,7 @@ AI lyrical content. Delivered through distributor upload workflows and surfaced 
 **Where it stops.** Entirely self-reported. No cryptography, no binding to the audio, no
 verification path. It records what a rightsholder asserted.
 
-**Relationship to Sigil.** The most important adjacency. DDEX defines *what* to say about AI
+**Relationship to Sigil.** The most important adjacency. [DDEX](glossary.md#organizations-and-standards-bodies) defines *what* to say about AI
 involvement and moves it through the pipeline the music industry already uses. Sigil could
 supply the missing half by making that assertion verifiable. Aligning the Sigil payload
 vocabulary with the DDEX categories is a live design option.
@@ -86,7 +86,7 @@ tells you which asset this is, not who vouched for it or how it was made.
 
 **Relationship to Sigil.** This is the closest existing proof that the [carrier](glossary.md#terms-sigil-defines) mechanism
 works at professional scale. It substantially de-risks the embedding layer and it means the
-carrier is not where Sigil's contribution lies. Study before specifying anything.
+[carrier](glossary.md#terms-sigil-defines) is not where Sigil's contribution lies. Study before specifying anything.
 
 ---
 
@@ -95,16 +95,16 @@ carrier is not where Sigil's contribution lies. Study before specifying anything
 **What it is.** Audio and video watermark standards deployed in [ATSC](glossary.md#organizations-and-standards-bodies) 3.0 NextGen TV,
 carrying signaling and identification data through the broadcast chain.
 
-**Where it stops.** Same shape as OBID. Signaling and identification, not provenance
-attestation.
+**Where it stops.** Same shape as [OBID](glossary.md#identifiers-and-file-formats). Signaling and identification, not provenance
+[attestation](glossary.md#terms-sigil-defines).
 
 ---
 
 ## Simmons and Winograd, arXiv 2405.12336
 
 **What it is.** *Interoperable Provenance Authentication of Broadcast Media using Open
-Standards-based Metadata, Watermarking and Cryptography.* Proposes combining C2PA
-cryptographic metadata with ATSC audio and video watermarking to validate the provenance of
+Standards-based Metadata, Watermarking and Cryptography.* Proposes combining [C2PA](glossary.md#organizations-and-standards-bodies)
+cryptographic metadata with [ATSC](glossary.md#organizations-and-standards-bodies) audio and video watermarking to validate the provenance of
 broadcast news redistributed on social platforms.
 
 **Where it stops.** Scoped to broadcast news and built on the ATSC watermark stack.
@@ -117,7 +117,7 @@ be stated relative to this paper.
 
 ## SMPTE Content Provenance and Authenticity in Media Study Group
 
-**What it is.** A SMPTE study group formed 16 July 2025, headed by Thomas Bause Mason,
+**What it is.** A [SMPTE](glossary.md#organizations-and-standards-bodies) study group formed 16 July 2025, headed by Thomas Bause Mason,
 SMPTE's director of standards, with participants from Ross Video, Sony, Adobe, the [EBU](glossary.md#organizations-and-standards-bodies), and
 Metaglue. Charter is to identify relevant provenance technologies, review work by other
 professional media organizations, gather use cases and requirements, and recommend where

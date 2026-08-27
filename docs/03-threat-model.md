@@ -24,13 +24,13 @@ Sigil can and cannot claim.
 - **That an unsigned file is not AI generated.** Absence of a signature is not evidence of
   anything. This is the single most important limitation and any conforming implementation
   must surface it. See [00-overview.md](00-overview.md).
-- **That a signed claim is true.** Sigil verifies that a signer made a claim. Whether the
+- **That a signed claim is true.** Sigil verifies that a [signer](glossary.md#terms-sigil-defines) made a claim. Whether the
   claim is accurate reduces entirely to trust in the signer.
 - **Survival of determined adversarial removal.** An attacker who controls the file and is
-  willing to degrade it can defeat any imperceptible carrier. Published work on
+  willing to degrade it can defeat any imperceptible [carrier](glossary.md#terms-sigil-defines). Published work on
   diffusion-based [watermark](glossary.md#provenance-and-content-authenticity) removal is directly relevant here.
 - **Protection against a compromised or dishonest signer.** Key compromise is handled by
-  revocation, which is a mitigation and not a prevention.
+  [revocation](glossary.md#cryptography-and-specification), which is a mitigation and not a prevention.
 
 ## Two structural limits
 
@@ -99,7 +99,7 @@ Each of these needs a written section. They are listed rather than resolved.
 5. **The false accuser.** Wants to make legitimate content fail verification in order to
    discredit it.
 6. **The launderer of provenance.** Wants to pass unattested or generated content through a
-   trusted signer so it emerges with a valid attestation. Distinct from the forger: no key is
+   trusted signer so it emerges with a valid [attestation](glossary.md#terms-sigil-defines). Distinct from the forger: no key is
    compromised and no signature is faked. The chain is used exactly as designed.
 
 ## Known open problem: the transplant attack
@@ -154,7 +154,7 @@ anachronistic work, which is disproportionately the culturally significant kind.
 
 ### Non-participating generators
 
-Content from models that do not watermark their output arrives unmarked and indistinguishable
+Content from models that do not [watermark](glossary.md#provenance-and-content-authenticity) their output arrives unmarked and indistinguishable
 from unmarked historical material. Accepted, because the protocol is a mechanism for
 accountability among participants and was never a detector of parties who decline to
 participate. See [06-existing-recordings.md](06-existing-recordings.md).

@@ -12,7 +12,7 @@
   has to make that structurally difficult to misread. See
   [../00-overview.md](../00-overview.md) and
   [../03-threat-model.md](../03-threat-model.md).
-- Partial and degraded results. What a verifier reports when it recovers a damaged [carrier](../glossary.md#terms-sigil-defines).
+- Partial and degraded results. What a [verifier](../glossary.md#terms-sigil-defines) reports when it recovers a damaged [carrier](../glossary.md#terms-sigil-defines).
 - Failure behavior. [Fail closed](../glossary.md#cryptography-and-specification) per R7.
 
 ## Reporting guidance

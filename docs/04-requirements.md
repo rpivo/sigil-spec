@@ -29,16 +29,16 @@ disqualifying, so they double as a list of ways this idea could turn out not to 
 ## Cryptographic
 
 - **R8.** Verification must be possible offline given the [signer](glossary.md#terms-sigil-defines)'s [public key](glossary.md#cryptography-and-specification).
-- **R9.** The attestation must be bound to the recording such that transplanting it to
+- **R9.** The [attestation](glossary.md#terms-sigil-defines) must be bound to the recording such that transplanting it to
   different content fails verification. See [03-threat-model.md](03-threat-model.md).
 - **R10.** Key [revocation](glossary.md#cryptography-and-specification) must be supported, and the revocation-checking path must not
   silently reintroduce a hard network dependency into normal verification.
 - **R11.** [Algorithm agility](glossary.md#cryptography-and-specification). Signature schemes get broken. The payload must carry enough
-  versioning to migrate without breaking existing verifiers.
+  versioning to migrate without breaking existing [verifiers](glossary.md#terms-sigil-defines).
 
 ## Capacity
 
-- **R12.** The carrier must fit a full signature plus content binding plus claim data, not
+- **R12.** The [carrier](glossary.md#terms-sigil-defines) must fit a full signature plus content binding plus claim data, not
   merely an identifier. This is the requirement that most sharply distinguishes Sigil from
   [SMPTE](glossary.md#organizations-and-standards-bodies) ST 2112 and [ATSC](glossary.md#organizations-and-standards-bodies) A/334, which carry identifiers, and it is the one most likely to
   be technically binding. Payload budget is an open question.

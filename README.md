@@ -33,7 +33,7 @@ Provenance today splits into two camps, and neither closes the loop.
 **Metadata based systems** attach a signed record to the file. [C2PA](docs/glossary.md#organizations-and-standards-bodies) is the leading example
 and it is a genuine open standard with real professional adoption. But its primary binding
 lives in the container, and any tool that re-encodes the file discards it. Music and film
-assets are transcoded constantly, through [mastering](docs/glossary.md#audio-and-video-production), delivery, and platform ingest. C2PA
+assets are transcoded constantly, through [mastering](docs/glossary.md#audio-and-video-production), delivery, and platform ingest. [C2PA](docs/glossary.md#organizations-and-standards-bodies)
 addresses this with what it calls *[soft bindings](docs/glossary.md#provenance-and-content-authenticity)*, where a [watermark](docs/glossary.md#provenance-and-content-authenticity) carries a pointer that
 lets a [verifier](docs/glossary.md#terms-sigil-defines) re-discover a [manifest](docs/glossary.md#provenance-and-content-authenticity) stored remotely. That works, but it makes verification
 dependent on a network lookup and a reachable repository.
@@ -56,6 +56,10 @@ dependent on a network lookup and a reachable repository.
 
   soft binding      file --> pointer --> network --> repository --> result
   signal-carried    file --> attestation --> result
+
+  both also need the signer's key and revocation state, which is per-signer
+  and cacheable rather than per-asset. the difference is the repository,
+  not the network. see docs/08-soft-binding-vs-signal-carried.md
 ```
 
 **Declarative systems** ask the rightsholder to state what happened. The [DDEX](docs/glossary.md#organizations-and-standards-bodies) AI disclosure
@@ -65,8 +69,12 @@ credits. It is a meaningful piece of infrastructure and the industry now has a s
 vocabulary because of it. But the disclosure is self-reported. Nothing binds the claim to
 the audio, and nothing can be checked.
 
-Sigil aims at the space between them: the attestation itself travels in the signal, and it
-verifies standalone.
+Sigil aims at the space between them: the [attestation](docs/glossary.md#terms-sigil-defines) itself travels in the signal, so no
+per-asset repository has to exist or be maintained for the proof to remain checkable.
+
+The gap between this and C2PA's [soft binding](docs/glossary.md#provenance-and-content-authenticity) is narrower than it first appears, and
+[docs/08-soft-binding-vs-signal-carried.md](docs/08-soft-binding-vs-signal-carried.md) sets
+out exactly what does and does not separate them.
 
 ## Architecture in one line
 
@@ -79,19 +87,19 @@ found while examining it, including where in a signal path attestation can begin
 
 | System | Mechanism | Verifiable? | Survives [transcode](docs/glossary.md#audio-and-video-production)? | Offline? | Domain |
 |---|---|---|---|---|---|
-| **C2PA / [Content Credentials](docs/glossary.md#provenance-and-content-authenticity)** | Signed manifest in container, watermark as soft binding pointer | Yes | Manifest no, pointer yes | No, needs repository lookup | Imaging first, audio and video growing |
+| **C2PA / [Content Credentials](docs/glossary.md#provenance-and-content-authenticity)** | Signed [manifest](docs/glossary.md#provenance-and-content-authenticity) in container, [watermark](docs/glossary.md#provenance-and-content-authenticity) as soft binding pointer | Yes | Manifest no, pointer yes | No, needs repository lookup | Imaging first, audio and video growing |
 | **SynthID** | Imperceptible watermark | Google only | Partly | No | Google generative output |
-| **DDEX AI disclosure** | Declared metadata in delivery | No, self-reported | Metadata layer only | n/a | Music |
+| **[DDEX](docs/glossary.md#organizations-and-standards-bodies) AI disclosure** | Declared metadata in delivery | No, self-reported | Metadata layer only | n/a | Music |
 | **[SMPTE](docs/glossary.md#organizations-and-standards-bodies) ST 2112 ([OBID](docs/glossary.md#identifiers-and-file-formats))** | Inaudible audio watermark carrying identifiers | Identifier only, not an attestation | Yes | Yes | Broadcast ad and program ID |
 | **Sigil (proposed)** | Signature carried in the signal itself | Yes | Design goal | Design goal | Music and film |
 
 ## Prior art, stated plainly
 
 Inaudible watermark carriage in professional media is not new and is not the contribution
-here. SMPTE ST 2112 already binds [Ad-ID](docs/glossary.md#identifiers-and-file-formats) and [EIDR](docs/glossary.md#identifiers-and-file-formats) identifiers into content via inaudible
+here. [SMPTE](docs/glossary.md#organizations-and-standards-bodies) ST 2112 already binds [Ad-ID](docs/glossary.md#identifiers-and-file-formats) and [EIDR](docs/glossary.md#identifiers-and-file-formats) identifiers into content via inaudible
 audio watermarking. [ATSC](docs/glossary.md#organizations-and-standards-bodies) A/334 and A/335 carry audio and video watermarks in deployed
 NextGen TV. Simmons and Winograd have already published a scheme combining C2PA metadata,
-ATSC watermarking, and cryptography for broadcast news.
+[ATSC](docs/glossary.md#organizations-and-standards-bodies) watermarking, and cryptography for broadcast news.
 
 What appears to be unaddressed is a **self-contained cryptographic attestation**, designed
 for the music and film post-production chain rather than for broadcast transmission, that
@@ -133,6 +141,7 @@ docs/
   05-chain-of-custody.md  How attestations accumulate across the production chain
   06-existing-recordings.md  The back catalogue, retroactive claims, timestamping
   07-timestamp-log.md     What the log is, what it proves, why it comes first
+  08-soft-binding-vs-signal-carried.md   What actually separates the two
   spec/
     00-conventions.md     Terminology and document conventions
     01-payload.md         What the attestation contains
