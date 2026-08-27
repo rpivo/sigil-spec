@@ -143,6 +143,7 @@ For readers arriving from music or film.
 | **Perceptual fingerprint** *[general]* | An identifier derived from how content sounds or looks rather than from its exact bytes, so it survives re-encoding. Chromaprint is a common audio example. Matching is approximate. |
 | **Revocation** *[general]* | Declaring a key no longer trusted, typically after compromise. A mitigation, not a prevention: signatures made before revocation still need a policy. |
 | **Timestamp attestation** *[Sigil]* | Evidence that content existed no later than a given date, created at that time rather than claimed afterwards. Cannot be produced retroactively, which is what makes it trustworthy. |
+| **Trusted timestamping** *[general]* | Obtaining a date from a party the signer does not control, because a date a signer places in its own payload proves only that the signer asserted it. RFC 3161 defines one mechanism. |
 | **Transplant attack** *[general]* | Lifting a valid signature from one recording and attaching it to another. Prevented by the content anchor. See [03-threat-model.md](03-threat-model.md). |
 
 ---

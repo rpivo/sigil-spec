@@ -92,6 +92,14 @@ If that turns out to be wrong, this repository should say so. See
 - Surviving deliberate adversarial removal. See [docs/03-threat-model.md](docs/03-threat-model.md)
   for what is and is not in scope.
 
+## Two mechanisms
+
+The signature travels inside the audio and says who vouched for a recording. The log is an
+external public record that says when content existed. They are independent, they answer
+different questions, and only the first is what this specification is about. See
+[docs/00-overview.md](docs/00-overview.md) and
+[docs/07-timestamp-log.md](docs/07-timestamp-log.md).
+
 ## Repository layout
 
 ```

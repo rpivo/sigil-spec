@@ -40,6 +40,24 @@ That is the right shape for the problem. The fraudulent-archival attack requires
 appear older than it is, and a log entry sets an upper bound on age, which is the bound that
 attack must defeat.
 
+## Why a signature's own timestamp is not sufficient
+
+An attestation can contain a date, and once signed that date cannot be altered without
+invalidating the signature.
+
+It nonetheless remains **the signer's assertion**. A signer with an incorrect clock, a
+manipulated clock, or bad intent can place any date in the payload and sign it validly. The
+signature establishes that the signer asserted the date. It does not establish that the date
+is true.
+
+Trustworthy time requires an anchor outside the signer's control. This is why RFC 3161
+timestamp authorities exist, and why code signing relies on trusted timestamping rather than
+on the signing machine's clock.
+
+The log is therefore not a duplicate of information already carried in the attestation. It is
+what makes time verifiable at all. See [00-overview.md](00-overview.md) for the general
+contrast between the two mechanisms.
+
 ## Which material it helps
 
 The counterintuitive part: **the log seals time going forward and cannot seal the past.**

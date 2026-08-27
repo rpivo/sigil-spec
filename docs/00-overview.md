@@ -17,6 +17,32 @@ it against a known public key, and report what the signer claimed. Because the a
 travels in the signal and is self-contained, it survives container changes and verifies
 without a network lookup.
 
+## Two mechanisms, often confused
+
+This project involves two distinct pieces, and they are easy to run together because they are
+discussed side by side. They are independent, and each works without the other.
+
+|  | The signature | The log |
+|---|---|---|
+| **Where it lives** | Inside the audio, as an imperceptible carrier | On a public record, external to the file |
+| **Travels with the file** | Yes | No |
+| **What it says** | A signer claims something about this recording | Content with this hash existed by this date |
+| **Verifying it** | Offline, no lookup required | Requires querying the log |
+| **Who creates it** | A capture device, a DAW, or an accredited signer | A platform, label, or archive |
+| **When it becomes useful** | Once other vendors adopt it | Immediately, and compounds thereafter |
+
+**The signature answers who vouches for this and what they claim. The log answers when this
+existed.** Neither can answer the other's question: a hash discloses nothing about origin, and
+a signature carries no trustworthy notion of time. See
+[07-timestamp-log.md](07-timestamp-log.md).
+
+They compose. Logging the hash of a signed recording gives both an accountable origin claim
+and independent evidence of when it existed.
+
+Of the two, the signature is what this specification is about. The log is established
+technology, and is treated here as supporting infrastructure that happens to be deployable
+without anyone else's cooperation.
+
 ## What a claim asserts
 
 A Sigil claim is a statement by an identified signer, at a point in time, about a specific
