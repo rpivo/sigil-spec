@@ -4,8 +4,13 @@
 
 ## Document status
 
-No document in `docs/spec/` is normative yet. When a section stabilizes, replace this banner
-with a version and status line.
+No document in `docs/spec/` is normative yet, meaning none of it states a requirement that
+something must satisfy in order to conform. Nothing here is stable enough to implement
+against. When a section stabilizes, replace its banner with a version and status line.
+
+Note that normative is a property of the text rather than a claim about the document's
+standing. A specification can be entirely normative and adopted by no one. See
+[../glossary.md](../glossary.md).
 
 ## Requirement keywords
 
