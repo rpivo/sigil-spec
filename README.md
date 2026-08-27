@@ -127,10 +127,6 @@ docs/
     regulatory.md         EU AI Act, California AI Transparency Act
 ```
 
-## Current work
-
-Active checklist in [ACTIONS.md](ACTIONS.md).
-
 ## Contributing
 
 Early stage, so the most useful contributions are challenges to the premise. If a claim in
