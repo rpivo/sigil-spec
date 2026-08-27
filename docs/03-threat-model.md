@@ -131,10 +131,15 @@ evidence can be constructed.
   specifically because of its claimed origin, which chiefly means significant lost
   recordings. That category attracts scrutiny in proportion to its value, so the
   highest-payoff cases are the most closely examined.
-- *Shrinking against a growing evidence base.* Prospective timestamping accumulates from the
-  moment it begins. The longer the log runs, the more anomalous an unlogged claim of age
-  becomes, without anyone exercising judgment. See
+- *Low and falling base rate.* Genuine archival discoveries number in the hundreds per year
+  against roughly a hundred thousand new tracks per day. The category is small enough to
+  examine case by case, and shrinks as a proportion of activity as release volume grows. This
+  is what makes expensive per-case review affordable. See
   [06-existing-recordings.md](06-existing-recordings.md).
+- *A fixed, not growing, exposed window.* Once prospective timestamping runs, material
+  published afterwards is expected to carry a log entry, so a claim of age without one is
+  anomalous. The fakeable window is therefore bounded at everything predating the log and
+  becomes a smaller fraction of the catalogue every year it operates.
 - *Declining incentive.* Passing generated material off as historical pays only while
   disclosure carries stigma. As disclosure normalises, the return falls.
 - *Detectable after the fact.* Where retroactive attestations are publicly logged with their

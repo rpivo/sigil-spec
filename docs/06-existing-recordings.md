@@ -80,8 +80,15 @@ Google domains, used against users in Iran, and the company collapsed. Symantec 
 progressively distrusted by major browsers over sustained misissuance. Trust degraded to the
 least careful accredited party and every relying party inherited the result.
 
-Scale makes this sharper. A body cannot individually adjudicate hundreds of millions of
-recordings, so it delegates to labels and archives, and rigour varies across delegates.
+Scale applies to bulk backfill of the existing catalogue, which is a one-time problem of
+enormous size and unavoidably requires delegation to labels and archives, with rigour varying
+across delegates.
+
+It does not apply to the flow of new claims of historical provenance, which is what the fraud
+actually consists of. Genuine archival discoveries number in the hundreds per year against
+something on the order of a hundred thousand new tracks per day. Four or five orders of
+magnitude separate them, which means the category can be examined case by case, by hand, and
+can afford to be. See [#asymmetric-verification](#asymmetric-verification).
 
 There is also an incentive constraint. Where a rightsholder vouches for its own catalogue,
 signer and beneficiary are the same party, and disclosure may be commercially unwelcome.
@@ -101,6 +108,27 @@ unfalsifiable claim into an auditable one.
 This uses the same append-only infrastructure as the timestamping proposal below, so the two
 are complementary rather than competing.
 
+## Asymmetric verification
+
+The volume disparity between the two categories is not only a risk assessment. It determines
+how verification effort should be allocated, and the two modes have entirely different
+economics.
+
+| Category | Volume | Verification |
+|---|---|---|
+| New releases | Enormous | Cheap, automated, cryptographic. Must scale to millions. |
+| Claims of historical provenance | Tiny | Expensive, human, evidence-based. Can afford per-case scrutiny. |
+
+A single uniform process for both would either make routine verification unaffordable or make
+archival claims trivial to fabricate. The disparity is what permits the asymmetry, and the
+asymmetry is what makes both tractable.
+
+Note also that base rates measure frequency rather than harm. One fabricated lost recording by
+a significant artist does more damage than a large number of undisclosed routine releases. But
+rare and high-stakes is exactly the profile that warrants expensive per-case review, and the
+small volume is what makes such review affordable, so the impact weighting supports the same
+allocation.
+
 ## Timestamping: available now, and stronger
 
 Age cannot be established retroactively. It can be established prospectively, starting
@@ -118,6 +146,12 @@ The properties compare favourably with retroactive signing:
 - **No forgery oracle.** An append-only log cannot be backdated.
 - **No hardware and no industry cooperation.** A single catalogue holder can begin alone.
 - **Covers the hard case.** It works precisely for material with no public paper trail.
+- **It freezes the exposed window.** Once the log runs, material published afterwards is
+  expected to have an entry, so a claim of age with no entry is anomalous rather than merely
+  unverified. The fakeable window is therefore fixed at everything predating the log and does
+  not grow. Each year of operation makes that fixed window a smaller fraction of all recorded
+  music, with nobody exercising judgment. Without a log the pool of plausibly claimable dates
+  expands indefinitely.
 
 Established mechanisms exist, including RFC 3161 timestamping and transparency logs in the
 style of Sigstore's Rekor.
