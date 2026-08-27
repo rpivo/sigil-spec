@@ -95,6 +95,7 @@ docs/
   03-threat-model.md      Adversaries, assumptions, explicit non-defenses
   04-requirements.md      What a viable protocol has to satisfy
   05-chain-of-custody.md  How attestations accumulate across the production chain
+  06-existing-recordings.md  The back catalogue, retroactive claims, timestamping
   spec/
     00-conventions.md     Terminology and document conventions
     01-payload.md         What the attestation contains

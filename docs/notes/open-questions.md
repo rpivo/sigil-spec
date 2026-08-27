@@ -54,6 +54,18 @@ See [../05-chain-of-custody.md](../05-chain-of-custody.md).
 25. Whether the protocol should say anything about generators that decline to watermark, or
     treat that as explicitly out of scope.
 
+## Existing recordings
+
+See [../06-existing-recordings.md](../06-existing-recordings.md).
+
+26. Whether retroactive provenance assertions belong in this protocol, or are better left to
+    existing rights and registration systems.
+27. What corroborating evidence a provenance assertion must carry to be worth anything.
+28. Whether prospective timestamping should be specified here or recommended alongside,
+    given it is useful independently of the carrier and deployable immediately.
+29. How a verifier presents a chain mixing capture attestations, timestamps, and provenance
+    assertions, which is the normal case for catalogue material.
+
 ## Governance
 
 11. Trust model. Certificate hierarchy, signer registry, or decentralized.

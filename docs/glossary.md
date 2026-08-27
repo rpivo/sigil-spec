@@ -69,6 +69,7 @@ both C2PA and SMPTE. See [spec/00-conventions.md](spec/00-conventions.md).
 | **Absence inference** *[Sigil]* | The unsupported reading of a missing signature as evidence about origin, in either direction. Named so it can be argued against. See [03-threat-model.md](03-threat-model.md). |
 | **Assurance level** *[C2PA]* | A measure of how strongly an attestation is protected, for example whether signing occurs in dedicated hardware. Google integrated Assurance Level 2 into Pixel camera hardware. |
 | **Attested capture** *[general]* | Signing at the point content enters the digital domain, so the capture device vouches for the samples it produced. |
+| **Capture attestation** *[Sigil]* | A claim by the device that produced the samples. The strongest class, bound to hardware and made at capture time. |
 | **Chain of custody** *[general]* | A record of each party that handled content and what each attested to. See [05-chain-of-custody.md](05-chain-of-custody.md). |
 | **DRM** *[general]* | Digital Rights Management. Technology restricting how content may be used or copied. An explicit non-goal for Sigil, which attests to origin and does not restrict anything. The distinction matters because a protocol that embeds data in media is routinely mistaken for DRM. |
 | **Durable Content Credential** *[C2PA]* | A Content Credential with one or more soft bindings, so the manifest can be rediscovered after the embedded metadata is stripped. |
@@ -132,9 +133,12 @@ For readers arriving from music or film.
 | **Conformance program** *[general]* | The process deciding who may implement a standard and hold signing keys. C2PA runs one. A signature means little without a process governing who holds keys. |
 | **Certificate hierarchy** *[general]* | A trust model where authorities vouch for signers in a chain up to a trusted root. One candidate trust model for Sigil. |
 | **Fail closed** *[general]* | On error or ambiguity, report failure rather than success. Requirement R7: a damaged carrier must never yield a false valid result. |
+| **Provenance assertion** *[Sigil]* | A claim by a party about content it did not capture. Reduces to trust in that party plus whatever corroboration is offered. Must never be presented as equivalent to a capture attestation. See [06-existing-recordings.md](06-existing-recordings.md). |
 | **Provenance laundering** *[general]* | Passing unattested content through a trusted signer so it emerges with a valid attestation. Requires no forgery: the chain is used as designed. See [03-threat-model.md](03-threat-model.md). |
 | **Public key** *[general]* | The half of a keypair used to verify a signature. Distributable freely, which is what makes offline verification possible. |
+| **Append-only log** *[general]* | A record that can be added to but not rewritten, so an entry proves something existed at the time it was made. The basis for timestamping. Examples include RFC 3161 timestamping and transparency logs such as Sigstore's Rekor. |
 | **Revocation** *[general]* | Declaring a key no longer trusted, typically after compromise. A mitigation, not a prevention: signatures made before revocation still need a policy. |
+| **Timestamp attestation** *[Sigil]* | Evidence that content existed no later than a given date, created at that time rather than claimed afterwards. Cannot be produced retroactively, which is what makes it trustworthy. |
 | **Transplant attack** *[general]* | Lifting a valid signature from one recording and attaching it to another. Prevented by the content anchor. See [03-threat-model.md](03-threat-model.md). |
 
 ---

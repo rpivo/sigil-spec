@@ -60,11 +60,16 @@ The population of unsigned recordings permanently contains:
 - The entire catalogue of work created before the protocol existed.
 - Everything captured on the large installed base of hardware that will never attest.
 - Analog and vintage workflows, where the absence of modern signal handling is the point.
-- Field recordings and archival material.
+- Archival material and existing field recordings. Note that field recorders are digital
+  capture devices and can attest going forward, so this shrinks over time for new material
+  while remaining fixed for old.
 - Anyone who cannot afford to re-equip, which distributes the harm unevenly.
 - Output from generators that decline to participate.
 
-The last item is why this does not resolve with adoption. Universal cooperation among
+Some of this is addressable. Released catalogue has an independent evidence trail, and
+prospective timestamping can establish existence dates for material that lacks one. See
+[06-existing-recordings.md](06-existing-recordings.md). The last item is why the inference
+still does not become safe with adoption. Universal cooperation among
 compliant vendors still leaves unsigned material produced by non-cooperating ones, so the
 unsigned population always mixes the innocent with the evasive. There is no adoption
 threshold past which absence becomes informative.

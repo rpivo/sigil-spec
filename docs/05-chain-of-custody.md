@@ -148,6 +148,12 @@ correspondingly unlikely to move.
 hardware-backed, with Google integrating Assurance Level 2 into Pixel camera hardware.
 Mapping these tiers onto that existing vocabulary is preferable to defining a competing one.
 
+## Recordings that predate the chain
+
+Everything captured before the protocol exists sits outside it, and claims about that
+material are a different kind of claim. See
+[06-existing-recordings.md](06-existing-recordings.md).
+
 ## Open questions
 
 Tracked in [notes/open-questions.md](notes/open-questions.md).
