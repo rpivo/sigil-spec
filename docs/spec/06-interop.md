@@ -51,6 +51,10 @@ something SMPTE carriage should support rather than as a SMPTE standard in itsel
 
 ## Sequencing
 
+See [../notes/adoption-strategy.md](../notes/adoption-strategy.md) for the fuller plan,
+including how each body accepts input and what it costs.
+
+
 Music first. DDEX has a defined gap, a shorter path from proposal to pilot, and no incumbent
 verification mechanism to displace. Film via SMPTE is a slower process against a study group
 that has not yet reported. Attempting both at once is likely to mean neither.

@@ -122,6 +122,7 @@ docs/
     05-verification.md    The verifier algorithm
     06-interop.md         C2PA, DDEX, SMPTE alignment
   notes/
+    adoption-strategy.md  How this reaches a standards body, and in what order
     open-questions.md     Unresolved decisions, tracked honestly
     regulatory.md         EU AI Act, California AI Transparency Act
 ```
