@@ -38,6 +38,26 @@ addresses this with what it calls *[soft bindings](docs/glossary.md#provenance-a
 lets a [verifier](docs/glossary.md#terms-sigil-defines) re-discover a [manifest](docs/glossary.md#provenance-and-content-authenticity) stored remotely. That works, but it makes verification
 dependent on a network lookup and a reachable repository.
 
+```
+  THE DELIVERY CHAIN, AND WHAT SURVIVES IT
+
+                        capture  master  transcode  ingest  streaming  listener
+                        -------  ------  ---------  ------  ---------  --------
+  container metadata       ✓       ✓         ✗        ✗         ✗         ✗
+  soft binding             ✓       ✓         ✓        ✓         ✓         ✓
+  signal-carried           ✓       ✓         ✓        ✓         ✓         ✓
+
+  container metadata   the C2PA manifest, lost at the first non-aware re-encode
+  soft binding         survives, but the proof itself is stored elsewhere
+  signal-carried       survives, and carries the proof with it
+
+
+  WHAT VERIFICATION COSTS
+
+  soft binding      file --> pointer --> network --> repository --> result
+  signal-carried    file --> attestation --> result
+```
+
 **Declarative systems** ask the rightsholder to state what happened. The [DDEX](docs/glossary.md#organizations-and-standards-bodies) AI disclosure
 standard, developed with Spotify, covers AI vocals, instrumentation, composition,
 post-production, and lyrics. It flows through distributor upload workflows and surfaces in
