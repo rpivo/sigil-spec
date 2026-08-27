@@ -45,6 +45,39 @@ participant. Any party able to induce a trusted signer to sign obtains a valid s
 mitigation is not technical but definitional: honest declaration of unattested inputs must be
 a conformance requirement. See [05-chain-of-custody.md](05-chain-of-custody.md).
 
+## The absence inference
+
+The most likely misuse of this protocol is not an attack. It is a reasonable-sounding
+inference that does not hold.
+
+Once adoption is broad, it becomes tempting to read a missing signature as evidence that
+content is not of organic origin. The reasoning is that compliant generators mark their
+output, so unmarked material is suspect. **The protocol must not support this inference, and
+implementations must not present results in a way that implies it.**
+
+The population of unsigned recordings permanently contains:
+
+- The entire catalogue of work created before the protocol existed.
+- Everything captured on the large installed base of hardware that will never attest.
+- Analog and vintage workflows, where the absence of modern signal handling is the point.
+- Field recordings and archival material.
+- Anyone who cannot afford to re-equip, which distributes the harm unevenly.
+- Output from generators that decline to participate.
+
+The last item is why this does not resolve with adoption. Universal cooperation among
+compliant vendors still leaves unsigned material produced by non-cooperating ones, so the
+unsigned population always mixes the innocent with the evasive. There is no adoption
+threshold past which absence becomes informative.
+
+The supportable framing is asymmetric:
+
+> **A valid attestation raises confidence. Its absence returns to the status quo and carries
+> no adverse weight.**
+
+Anything stronger converts a provenance system into a penalty on everyone who was recording
+before it existed. See [spec/05-verification.md](spec/05-verification.md) for the
+corresponding reporting requirements.
+
 ## Adversaries to characterize
 
 Each of these needs a written section. They are listed rather than resolved.

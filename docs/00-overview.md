@@ -32,8 +32,11 @@ Three outcomes, and the distinction between the second and third matters:
 3. **Signature present but invalid.** The recording was altered after signing, or the
    signature was forged or corrupted.
 
-Any user-facing implementation must not collapse outcome 2 into "not AI generated." That
-inference is unsupported and is the most likely way this protocol gets misused in practice.
+Outcome 2 is uninformative **in both directions**. It must not be presented as "not AI
+generated", and it must not be presented as suspect either. A valid attestation raises
+confidence; its absence returns to the status quo and carries no adverse weight. Collapsing
+outcome 2 in either direction is the most likely way this protocol gets misused in practice.
+See [03-threat-model.md](03-threat-model.md).
 
 ## Multiple signers
 

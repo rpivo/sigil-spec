@@ -66,6 +66,7 @@ both C2PA and SMPTE. See [spec/00-conventions.md](spec/00-conventions.md).
 | **Content Credentials** *[C2PA]* | The consumer-facing name for C2PA provenance data attached to a file. |
 | **Content fingerprinting** *[general]* | Deriving an identifying value from the content itself, then matching it against a database. Unlike a watermark, it adds nothing to the file. C2PA permits it as a soft binding. |
 | **Analog hole** *[general]* | The unavoidable gap where content leaves the digital domain and can be re-captured. Any source can be played into an analog input, so capture attestation cannot establish that a performance was live. |
+| **Absence inference** *[Sigil]* | The unsupported reading of a missing signature as evidence about origin, in either direction. Named so it can be argued against. See [03-threat-model.md](03-threat-model.md). |
 | **Assurance level** *[C2PA]* | A measure of how strongly an attestation is protected, for example whether signing occurs in dedicated hardware. Google integrated Assurance Level 2 into Pixel camera hardware. |
 | **Attested capture** *[general]* | Signing at the point content enters the digital domain, so the capture device vouches for the samples it produced. |
 | **Chain of custody** *[general]* | A record of each party that handled content and what each attested to. See [05-chain-of-custody.md](05-chain-of-custody.md). |

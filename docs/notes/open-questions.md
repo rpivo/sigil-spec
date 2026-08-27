@@ -48,6 +48,12 @@ See [../05-chain-of-custody.md](../05-chain-of-custody.md).
 23. Whether the assurance tiers should map onto C2PA assurance levels rather than being
     defined independently.
 
+24. How to structure the result model so the absence inference is hard to express, rather
+    than merely discouraged in prose. Prohibiting it in text is unlikely to be enough if
+    downstream products find a binary presentation commercially convenient.
+25. Whether the protocol should say anything about generators that decline to watermark, or
+    treat that as explicitly out of scope.
+
 ## Governance
 
 11. Trust model. Certificate hierarchy, signer registry, or decentralized.

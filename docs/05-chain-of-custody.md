@@ -42,13 +42,30 @@ This generalizes into a rule worth applying to every proposed link:
 pickup systems, USB microphones, or networked audio under Dante or AES67, the chain can start
 at the instrument. The boundary is digital capture, not physical position in the path.
 
-## The analog hole
+## The analog hole, and why it is smaller here than elsewhere
 
 An audio interface cannot verify what is feeding its input. A speaker played into a
-microphone, or a converter output patched into an instrument input, is indistinguishable from
-a live performance.
+microphone, or a converter output patched into an instrument input, is not distinguishable
+from a live performance **by the interface itself**.
 
-Therefore an attested capture claims:
+It may still be distinguishable further along the chain. A robust audio watermark survives a
+digital-to-analog-to-digital round trip: audience measurement watermarks are engineered to
+survive a television speaker playing into a room and being captured by a microphone, which is
+a far harsher path than a line-level cable. So content that was watermarked at generation
+carries that mark through analog re-capture, and a verifier downstream can still recover it.
+
+This is a real advantage of audio over metadata-based provenance in other media. A photograph
+of a screen loses the original's C2PA manifest, because the provenance lived in a container
+that did not make the trip. A watermarked signal survives being played and re-recorded.
+
+Two limits remain, and neither is closed by adoption.
+
+**It only works against cooperating generators.** A model that does not watermark its output,
+or one modified locally to stop doing so, produces unmarked audio. Watermarking provides
+accountability among participants; it is not a detector of parties who decline to
+participate.
+
+**Capture attestation still cannot establish live performance.** What an interface signs is
 
 > These samples entered the digital domain through this device at this time.
 
