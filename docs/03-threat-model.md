@@ -14,8 +14,8 @@ Sigil can and cannot claim.
 - **Tamper evidence.** Material alteration of the recording after signing should cause
   verification to fail rather than to silently pass.
 - **Offline verification.** Verification should require no network call beyond having the
-  signer's public key and current revocation state.
-- **Survival of benign processing.** The carrier should survive the ordinary music and film
+  [signer](glossary.md#terms-sigil-defines)'s [public key](glossary.md#cryptography-and-specification) and current [revocation](glossary.md#cryptography-and-specification) state.
+- **Survival of benign processing.** The [carrier](glossary.md#terms-sigil-defines) should survive the ordinary music and film
   post chain. Defining "ordinary" precisely is an open question, see
   [04-requirements.md](04-requirements.md).
 
@@ -28,19 +28,19 @@ Sigil can and cannot claim.
   claim is accurate reduces entirely to trust in the signer.
 - **Survival of determined adversarial removal.** An attacker who controls the file and is
   willing to degrade it can defeat any imperceptible carrier. Published work on
-  diffusion-based watermark removal is directly relevant here.
+  diffusion-based [watermark](glossary.md#provenance-and-content-authenticity) removal is directly relevant here.
 - **Protection against a compromised or dishonest signer.** Key compromise is handled by
   revocation, which is a mitigation and not a prevention.
 
 ## Two structural limits
 
-**The analog hole.** A capture device cannot verify what feeds its analog input. Audio played
+**The [analog hole](glossary.md#provenance-and-content-authenticity).** A capture device cannot verify what feeds its analog input. Audio played
 into a microphone or patched into an instrument input is indistinguishable from a live
-performance. Capture attestation therefore claims that samples entered the digital domain
-through an identified device, and never that a human produced them. C2PA capture hardware
+performance. [Capture attestation](glossary.md#provenance-and-content-authenticity) therefore claims that samples entered the digital domain
+through an identified device, and never that a human produced them. [C2PA](glossary.md#organizations-and-standards-bodies) capture hardware
 operates under the same bound.
 
-**Weakest-link degradation.** In a chain of custody, trust degrades to the least trustworthy
+**Weakest-link degradation.** In a [chain of custody](glossary.md#provenance-and-content-authenticity), trust degrades to the least trustworthy
 participant. Any party able to induce a trusted signer to sign obtains a valid signature. The
 mitigation is not technical but definitional: honest declaration of unattested inputs must be
 a conformance requirement. See [05-chain-of-custody.md](05-chain-of-custody.md).
@@ -88,8 +88,8 @@ corresponding reporting requirements.
 Each of these needs a written section. They are listed rather than resolved.
 
 1. **The stripper.** Wants to remove provenance so AI-generated content passes as human
-   made. Controls the file. Willing to transcode, resample, or slightly degrade.
-2. **The forger.** Wants to attach a false attestation, marking AI-generated content as
+   made. Controls the file. Willing to [transcode](glossary.md#audio-and-video-production), resample, or slightly degrade.
+2. **The forger.** Wants to attach a false [attestation](glossary.md#terms-sigil-defines), marking AI-generated content as
    human made or attributing content to another creator. Reduces largely to key security.
 3. **The transplanter.** Wants to lift a valid signature from a genuine recording and apply
    it to a different one. This is the attack that determines how tightly the payload must be
@@ -121,7 +121,7 @@ preferable to implying a coverage the protocol does not have.
 ### Fabricated historical provenance
 
 A party presents recently generated material as an old recording, supported by manufactured
-documentary evidence, and obtains a provenance assertion for it. No process reliably prevents
+documentary evidence, and obtains a [provenance assertion](glossary.md#cryptography-and-specification) for it. No process reliably prevents
 this. Forensic examination of physical media is costly and defeatable, and documentary
 evidence can be constructed.
 

@@ -12,7 +12,7 @@ Relevant because it changes platform incentives, not because Sigil is a complian
 generative systems face requirements around marking synthetic content in machine-readable
 form.
 
-**California AI Transparency Act.** Also took effect 2 August 2026. Notable for two specific
+**[California AI Transparency Act](../glossary.md#regulatory).** Also took effect 2 August 2026. Notable for two specific
 obligations: embedded disclosures, and a free public tool that surfaces provenance data.
 
 ## Upcoming, and the one that matters most
@@ -36,5 +36,5 @@ timely rather than as a specification input.
 
 - Primary text of AI Act Article 50 and the current state of associated guidance.
 - California SB 942 as enacted and amended, including definitions of covered providers.
-- Whether either regime names specific standards, and whether C2PA conformance is treated as
+- Whether either regime names specific standards, and whether [C2PA](../glossary.md#organizations-and-standards-bodies) conformance is treated as
   presumptive compliance anywhere.

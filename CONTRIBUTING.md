@@ -17,7 +17,7 @@ not for you.
   cryptographic payload can be carried imperceptibly and survive commercial encoding. Any
   measurement, published result, or practical experience bearing on this is worth more than
   design discussion.
-- **Domain experience.** Mastering engineers, post supervisors, and anyone who has watched
+- **Domain experience.** [Mastering](docs/glossary.md#audio-and-video-production) engineers, post supervisors, and anyone who has watched
   metadata die in a delivery pipeline.
 - **Patent landscape.** Watermarking is densely patented. Pointers to relevant prior filings
   are useful.
@@ -26,7 +26,7 @@ not for you.
 
 ## Less useful right now
 
-Detailed spec text. The technical foundations are unresolved and drafting normative language
+Detailed spec text. The technical foundations are unresolved and drafting [normative](docs/glossary.md#cryptography-and-specification) language
 before settling the open questions would encode guesses as decisions.
 
 ## How

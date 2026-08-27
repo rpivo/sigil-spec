@@ -4,20 +4,20 @@
 
 ## To specify
 
-- The recovery algorithm, meaning how a verifier searches for and extracts an attestation.
-- The verification algorithm, meaning how it checks signature, content anchor, and
-  revocation state.
+- The recovery algorithm, meaning how a [verifier](../glossary.md#terms-sigil-defines) searches for and extracts an [attestation](../glossary.md#terms-sigil-defines).
+- The verification algorithm, meaning how it checks signature, [content anchor](../glossary.md#terms-sigil-defines), and
+  [revocation](../glossary.md#cryptography-and-specification) state.
 - The result model. "No signature found" must be reported distinctly from both "not AI
   generated" and "suspect". Absence is uninformative in both directions and the result model
   has to make that structurally difficult to misread. See
   [../00-overview.md](../00-overview.md) and
   [../03-threat-model.md](../03-threat-model.md).
-- Partial and degraded results. What a verifier reports when it recovers a damaged carrier.
-- Failure behavior. Fail closed per R7.
+- Partial and degraded results. What a verifier reports when it recovers a damaged [carrier](../glossary.md#terms-sigil-defines).
+- Failure behavior. [Fail closed](../glossary.md#cryptography-and-specification) per R7.
 
 ## Reporting guidance
 
-This section should carry normative language on how results are presented to end users, not
+This section should carry [normative](../glossary.md#cryptography-and-specification) language on how results are presented to end users, not
 only how they are computed. Two symmetrical failures need constraining, and the second is
 likelier to cause real harm at scale:
 

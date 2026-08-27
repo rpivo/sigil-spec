@@ -8,8 +8,8 @@
 **Do not attempt to establish a new standard. Become a component of existing ones.**
 
 "A new industry standard for media provenance" is a decade-long institutional undertaking with
-poor odds for a proposal without major backing. "The verification layer for DDEX AI
-disclosure" and "a registered C2PA soft binding algorithm" are achievable on a two to three
+poor odds for a proposal without major backing. "The verification layer for [DDEX](../glossary.md#organizations-and-standards-bodies) AI
+disclosure" and "a registered [C2PA](../glossary.md#organizations-and-standards-bodies) [soft binding](../glossary.md#provenance-and-content-authenticity) algorithm" are achievable on a two to three
 year horizon, accomplish the same objective, and remain the best available route to broader
 standing if that becomes possible.
 
@@ -30,19 +30,19 @@ Approximate payload requirement:
 |---|---|
 | Signature (Ed25519) | 64 |
 | Key identifier | 4 to 8 |
-| Content anchor (truncated) | 16 |
+| [Content anchor](../glossary.md#terms-sigil-defines) (truncated) | 16 |
 | Claim flags, DDEX-aligned | 2 to 4 |
 | Version | 1 |
 | **Subtotal** | **~90** |
 | With framing and error correction | ~128 |
 
-Established audio watermarks carry on the order of tens of bits per second, which puts 128
+Established audio [watermarks](../glossary.md#provenance-and-content-authenticity) carry on the order of tens of bits per second, which puts 128
 bytes somewhere around 20 to 100 seconds of audio per payload. That is tolerable for a
 complete track and is in direct tension with R6, recovery from an excerpt, in
 [../04-requirements.md](../04-requirements.md).
 
 The likely finding is that a hybrid is required: a short index carried in the signal with the
-full attestation resolved from the log. That is closer to C2PA's soft binding than the
+full [attestation](../glossary.md#terms-sigil-defines) resolved from the log. That is closer to C2PA's soft binding than the
 original premise and is much better discovered early than late.
 
 ### Phase 1. Operate the log
@@ -64,17 +64,17 @@ from production releases outweighs specification text.
 ### Phase 4. A second independent implementation
 
 Two interoperating implementations is the conventional threshold distinguishing a standard
-from a product, and is required for IETF standards-track advancement.
+from a product, and is required for [IETF](../glossary.md#organizations-and-standards-bodies) standards-track advancement.
 
 ## The bodies, and how each takes input
 
 Access is cheaper and more open than generally assumed. Note that the ordering below is by
-domain fit, not by urgency; only SMPTE has a closing window.
+domain fit, not by urgency; only [SMPTE](../glossary.md#organizations-and-standards-bodies) has a closing window.
 
 | Body | Domain | Fit | Barrier |
 |---|---|---|---|
 | **DDEX** | Music value chain, metadata and delivery | Highest substantive fit | Organisational membership |
-| **AES** | Professional audio engineering | The technical audio layer | Lowest. Individual, open, anyone may propose work |
+| **[AES](../glossary.md#organizations-and-standards-bodies)** | Professional audio engineering | The technical audio layer | Lowest. Individual, open, anyone may propose work |
 | **SMPTE** | Film and television, including audio for both | The film half, plus the ST 2112 precedent | ~$775/year for non-members |
 | **C2PA** | Cross-industry provenance | Interop target rather than a venue | Free and open |
 
@@ -139,7 +139,7 @@ Conformance costs, where they arise, are set by certificate authorities rather t
 
 ## Allies
 
-**Watermarking vendors are partners rather than competitors.** The carrier does not need to be
+**Watermarking vendors are partners rather than competitors.** The [carrier](../glossary.md#terms-sigil-defines) does not need to be
 invented; what is missing is a standardized cryptographic payload to put inside one. Verance,
 Digimarc and Kantar each operate proven carriers and each has commercial reason to want such a
 payload standardized on their technology.
@@ -148,7 +148,7 @@ Joseph Winograd of Verance co-authored the closest prior art, arXiv 2405.12336. 
 Verance early could resolve most of Phase 0, since the capacity figures being sought are
 figures they already hold.
 
-Other parties worth tracking: the EBU, Ross Video, Sony, Adobe and Metaglue, all participating
+Other parties worth tracking: the [EBU](../glossary.md#organizations-and-standards-bodies), Ross Video, Sony, Adobe and Metaglue, all participating
 in the SMPTE study group.
 
 ## Immediate actions

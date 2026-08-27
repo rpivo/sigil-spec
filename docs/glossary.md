@@ -47,16 +47,16 @@ both C2PA and SMPTE. See [spec/00-conventions.md](spec/00-conventions.md).
 
 | Term | Meaning |
 |---|---|
-| **ATSC** | Advanced Television Systems Committee. Sets digital television broadcast standards in North America, including the ATSC 3.0 / NextGen TV suite. |
-| **AES** | Audio Engineering Society. The professional audio standards body. Individual rather than organisational membership; its standards committee working groups are open to affected individuals, and anyone may propose new work. Not to be confused with the AES encryption standard. |
-| **C2PA** | Coalition for Content Provenance and Authenticity. Publishes the open, royalty-free Content Credentials standard. Formed from Adobe's CAI and Project Origin. |
-| **CAI** | Content Authenticity Initiative. Adobe-led membership community promoting Content Credentials. Distinct from C2PA, which develops the specification itself. |
-| **CIMM** | Coalition for Innovative Media Measurement. US media measurement body. Originated the TAXI initiative that led to SMPTE ST 2112. |
-| **DDEX** | Digital Data Exchange. Not-for-profit standards body for digital music value chain metadata. Owns the AI disclosure standard. |
-| **EBU** | European Broadcasting Union. European public service broadcaster alliance, active in media technology standards. |
-| **IETF** | Internet Engineering Task Force. Publishes RFCs, including the CBOR and COSE specifications relevant to payload design. |
-| **IPTC** | International Press Telecommunications Council. News industry standards body, notably for photo and news metadata. |
-| **SMPTE** | Society of Motion Picture and Television Engineers. Standards body for professional film and television engineering. |
+| **ATSC** | Advanced Television Systems Committee. Sets digital television broadcast standards in North America, including the ATSC 3.0 / NextGen TV suite. [atsc.org](https://www.atsc.org/) |
+| **AES** | Audio Engineering Society. The professional audio standards body. Individual rather than organisational membership; its standards committee working groups are open to affected individuals, and anyone may propose new work. Not to be confused with the AES encryption standard. [aes.org](https://aes.org/) |
+| **C2PA** | Coalition for Content Provenance and Authenticity. Publishes the open, royalty-free Content Credentials standard. Formed from Adobe's CAI and Project Origin. [c2pa.org](https://c2pa.org/) |
+| **CAI** | Content Authenticity Initiative. Adobe-led membership community promoting Content Credentials. Distinct from C2PA, which develops the specification itself. [contentauthenticity.org](https://contentauthenticity.org/) |
+| **CIMM** | Coalition for Innovative Media Measurement. US media measurement body. Originated the TAXI initiative that led to SMPTE ST 2112. [cimm-us.org](https://cimm-us.org/) |
+| **DDEX** | Digital Data Exchange. Not-for-profit standards body for digital music value chain metadata. Owns the AI disclosure standard. [ddex.net](https://ddex.net/) |
+| **EBU** | European Broadcasting Union. European public service broadcaster alliance, active in media technology standards. [ebu.ch](https://www.ebu.ch/) |
+| **IETF** | Internet Engineering Task Force. Publishes RFCs, including the CBOR and COSE specifications relevant to payload design. [ietf.org](https://www.ietf.org/) |
+| **IPTC** | International Press Telecommunications Council. News industry standards body, notably for photo and news metadata. [iptc.org](https://iptc.org/) |
+| **SMPTE** | Society of Motion Picture and Television Engineers. Standards body for professional film and television engineering. [smpte.org](https://www.smpte.org/) |
 
 ---
 
@@ -64,7 +64,7 @@ both C2PA and SMPTE. See [spec/00-conventions.md](spec/00-conventions.md).
 
 | Term | Meaning |
 |---|---|
-| **Content Credentials** *[C2PA]* | The consumer-facing name for C2PA provenance data attached to a file. |
+| **Content Credentials** *[C2PA]* | The consumer-facing name for C2PA provenance data attached to a file. [contentcredentials.org](https://contentcredentials.org/) |
 | **Content fingerprinting** *[general]* | Deriving an identifying value from the content itself, then matching it against a database. Unlike a watermark, it adds nothing to the file. C2PA permits it as a soft binding. |
 | **Analog hole** *[general]* | The unavoidable gap where content leaves the digital domain and can be re-captured. Any source can be played into an analog input, so capture attestation cannot establish that a performance was live. |
 | **Absence inference** *[Sigil]* | The unsupported reading of a missing signature as evidence about origin, in either direction. Named so it can be argued against. See [03-threat-model.md](03-threat-model.md). |
@@ -73,12 +73,12 @@ both C2PA and SMPTE. See [spec/00-conventions.md](spec/00-conventions.md).
 | **Capture attestation** *[Sigil]* | A claim by the device that produced the samples. The strongest class, bound to hardware and made at capture time. |
 | **Chain of custody** *[general]* | A record of each party that handled content and what each attested to. See [05-chain-of-custody.md](05-chain-of-custody.md). |
 | **DRM** *[general]* | Digital Rights Management. Technology restricting how content may be used or copied. An explicit non-goal for Sigil, which attests to origin and does not restrict anything. The distinction matters because a protocol that embeds data in media is routinely mistaken for DRM. |
-| **Durable Content Credential** *[C2PA]* | A Content Credential with one or more soft bindings, so the manifest can be rediscovered after the embedded metadata is stripped. |
+| **Durable Content Credential** *[C2PA]* | A Content Credential with one or more soft bindings, so the manifest can be rediscovered after the embedded metadata is stripped. [CAI durable credentials](https://opensource.contentauthenticity.org/docs/durable-cr/) |
 | **Hard binding** *[C2PA]* | Provenance data cryptographically bound into the asset itself. Contrast soft binding. |
-| **Manifest** *[C2PA]* | The signed metadata structure carrying provenance and edit history. Embedded in the container as JUMBF. |
+| **Manifest** *[C2PA]* | The signed metadata structure carrying provenance and edit history. Embedded in the container as JUMBF. [C2PA spec](https://spec.c2pa.org/) |
 | **Provenance** *[general]* | The record of where content came from and how it was changed. Distinct from authenticity, which is a judgment about whether that record is true. |
-| **Soft binding** *[C2PA]* | A watermark or fingerprint that lets a verifier rediscover a manifest which has been removed from a file. Carries a pointer to a remotely stored manifest rather than the provenance data itself. |
-| **Soft Binding Resolution API** *[C2PA]* | The standardized interface a client uses to retrieve a manifest from a repository given a recovered soft binding. |
+| **Soft binding** *[C2PA]* | A watermark or fingerprint that lets a verifier rediscover a manifest which has been removed from a file. Carries a pointer to a remotely stored manifest rather than the provenance data itself. [C2PA soft binding spec](https://spec.c2pa.org/specifications/specifications/2.2/softbinding/Decoupled.html) |
+| **Soft Binding Resolution API** *[C2PA]* | The standardized interface a client uses to retrieve a manifest from a repository given a recovered soft binding. [C2PA soft binding spec](https://spec.c2pa.org/specifications/specifications/2.2/softbinding/Decoupled.html) |
 | **Watermark** *[general]* | Data embedded in the signal itself, typically imperceptibly, surviving processing that would discard container metadata. Sigil's carrier is a watermark; the contribution is what it carries. |
 
 ---
@@ -87,9 +87,9 @@ both C2PA and SMPTE. See [spec/00-conventions.md](spec/00-conventions.md).
 
 | Term | Meaning |
 |---|---|
-| **Ad-ID** | Industry identifier for advertising assets in the United States. Bound into content by SMPTE ST 2112. |
-| **EIDR** | Entertainment Identifier Registry. Global identifier for movies and television programming. Also bound by ST 2112. |
-| **ISRC** | International Standard Recording Code. The music industry's per-recording identifier. Relevant context for how a Sigil claim might reference a recording. |
+| **Ad-ID** | Industry identifier for advertising assets in the United States. Bound into content by SMPTE ST 2112. [ad-id.org](https://www.ad-id.org/) |
+| **EIDR** | Entertainment Identifier Registry. Global identifier for movies and television programming. Also bound by ST 2112. [eidr.org](https://www.eidr.org/) |
+| **ISRC** | International Standard Recording Code. The music industry's per-recording identifier. Relevant context for how a Sigil claim might reference a recording. [isrc.ifpi.org](https://isrc.ifpi.org/) |
 | **JUMBF** | JPEG Universal Metadata Box Format, ISO/IEC 19566-5. The container structure C2PA uses to embed manifests. |
 | **MXF** | Material Exchange Format, SMPTE ST 377. Professional media container widely used in film and television. Carriage of provenance data in MXF is the SMPTE study group's flagged priority. |
 | **OBID** | Open Binding of IDentifiers. The SMPTE ST 2112 family, which binds Ad-ID and EIDR identifiers into content using inaudible audio watermarking. Carries identifiers, not attestations. |
@@ -128,12 +128,12 @@ For readers arriving from music or film.
 | Term | Meaning |
 |---|---|
 | **Algorithm agility** *[general]* | Designing a format so the cryptographic algorithms can be replaced later without breaking existing implementations. Necessary because signature schemes eventually get broken. |
-| **BCP 14** *[IETF]* | The convention giving MUST, SHOULD, MAY and similar words precise meanings in specifications. RFC 2119 and RFC 8174. See [spec/00-conventions.md](spec/00-conventions.md). |
-| **CBOR** *[IETF]* | Concise Binary Object Representation, RFC 8949. A compact binary data format. A candidate payload encoding because carrier capacity is tight. |
-| **COSE** *[IETF]* | CBOR Object Signing and Encryption, RFC 9052. Standard structures for signing CBOR data. |
+| **BCP 14** *[IETF]* | The convention giving MUST, SHOULD, MAY and similar words precise meanings in specifications. RFC 2119 and RFC 8174. See [spec/00-conventions.md](spec/00-conventions.md). [RFC 2119 / RFC 8174](https://www.rfc-editor.org/info/bcp14) |
+| **CBOR** *[IETF]* | Concise Binary Object Representation, RFC 8949. A compact binary data format. A candidate payload encoding because carrier capacity is tight. [RFC 8949](https://www.rfc-editor.org/rfc/rfc8949) |
+| **COSE** *[IETF]* | CBOR Object Signing and Encryption, RFC 9052. Standard structures for signing CBOR data. [RFC 9052](https://www.rfc-editor.org/rfc/rfc9052) |
 | **Conformance program** *[general]* | The process deciding who may implement a standard and hold signing keys. C2PA runs one. A signature means little without a process governing who holds keys. |
 | **Certificate authority** *[general]* | A body that vouches for identities it did not itself establish, on the basis of a documented process. The closest existing analogue to an accredited retroactive signer, including in its failure modes. |
-| **Certificate Transparency** *[general]* | RFC 6962. Public append-only logging of issued certificates, making bad issuance detectable and attributable rather than attempting to prevent it. The model proposed for logging retroactive attestations. |
+| **Certificate Transparency** *[general]* | RFC 6962. Public append-only logging of issued certificates, making bad issuance detectable and attributable rather than attempting to prevent it. The model proposed for logging retroactive attestations. [RFC 6962](https://www.rfc-editor.org/rfc/rfc6962) |
 | **Certificate hierarchy** *[general]* | A trust model where authorities vouch for signers in a chain up to a trusted root. One candidate trust model for Sigil. |
 | **Fail closed** *[general]* | On error or ambiguity, report failure rather than success. Requirement R7: a damaged carrier must never yield a false valid result. |
 | **Provenance assertion** *[Sigil]* | A claim by a party about content it did not capture. Reduces to trust in that party plus whatever corroboration is offered. Must never be presented as equivalent to a capture attestation. See [06-existing-recordings.md](06-existing-recordings.md). |
@@ -146,7 +146,7 @@ For readers arriving from music or film.
 | **Perceptual fingerprint** *[general]* | An identifier derived from how content sounds or looks rather than from its exact bytes, so it survives re-encoding. Chromaprint is a common audio example. Matching is approximate. |
 | **Revocation** *[general]* | Declaring a key no longer trusted, typically after compromise. A mitigation, not a prevention: signatures made before revocation still need a policy. |
 | **Timestamp attestation** *[Sigil]* | Evidence that content existed no later than a given date, created at that time rather than claimed afterwards. Cannot be produced retroactively, which is what makes it trustworthy. |
-| **Trusted timestamping** *[general]* | Obtaining a date from a party the signer does not control, because a date a signer places in its own payload proves only that the signer asserted it. RFC 3161 defines one mechanism. |
+| **Trusted timestamping** *[general]* | Obtaining a date from a party the signer does not control, because a date a signer places in its own payload proves only that the signer asserted it. RFC 3161 defines one mechanism. [RFC 3161](https://www.rfc-editor.org/rfc/rfc3161) |
 | **Transplant attack** *[general]* | Lifting a valid signature from one recording and attaching it to another. Prevented by the content anchor. See [03-threat-model.md](03-threat-model.md). |
 
 ---

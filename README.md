@@ -1,6 +1,6 @@
 # Sigil
 
-**A proposal for embedding verifiable cryptographic attestations directly into audio and video signals.**
+**A proposal for embedding verifiable cryptographic [attestations](docs/glossary.md#terms-sigil-defines) directly into audio and video signals.**
 
 > **Status: early draft.** Nothing in this repository is normative. This is a working
 > document for an idea in progress, not a ratified specification. Technical decisions
@@ -30,15 +30,15 @@ document assumes neither.
 
 Provenance today splits into two camps, and neither closes the loop.
 
-**Metadata based systems** attach a signed record to the file. C2PA is the leading example
+**Metadata based systems** attach a signed record to the file. [C2PA](docs/glossary.md#organizations-and-standards-bodies) is the leading example
 and it is a genuine open standard with real professional adoption. But its primary binding
 lives in the container, and any tool that re-encodes the file discards it. Music and film
-assets are transcoded constantly, through mastering, delivery, and platform ingest. C2PA
-addresses this with what it calls *soft bindings*, where a watermark carries a pointer that
-lets a verifier re-discover a manifest stored remotely. That works, but it makes verification
+assets are transcoded constantly, through [mastering](docs/glossary.md#audio-and-video-production), delivery, and platform ingest. C2PA
+addresses this with what it calls *[soft bindings](docs/glossary.md#provenance-and-content-authenticity)*, where a [watermark](docs/glossary.md#provenance-and-content-authenticity) carries a pointer that
+lets a [verifier](docs/glossary.md#terms-sigil-defines) re-discover a [manifest](docs/glossary.md#provenance-and-content-authenticity) stored remotely. That works, but it makes verification
 dependent on a network lookup and a reachable repository.
 
-**Declarative systems** ask the rightsholder to state what happened. The DDEX AI disclosure
+**Declarative systems** ask the rightsholder to state what happened. The [DDEX](docs/glossary.md#organizations-and-standards-bodies) AI disclosure
 standard, developed with Spotify, covers AI vocals, instrumentation, composition,
 post-production, and lyrics. It flows through distributor upload workflows and surfaces in
 credits. It is a meaningful piece of infrastructure and the industry now has a shared
@@ -57,19 +57,19 @@ found while examining it, including where in a signal path attestation can begin
 
 ## How this differs from existing work
 
-| System | Mechanism | Verifiable? | Survives transcode? | Offline? | Domain |
+| System | Mechanism | Verifiable? | Survives [transcode](docs/glossary.md#audio-and-video-production)? | Offline? | Domain |
 |---|---|---|---|---|---|
-| **C2PA / Content Credentials** | Signed manifest in container, watermark as soft binding pointer | Yes | Manifest no, pointer yes | No, needs repository lookup | Imaging first, audio and video growing |
+| **C2PA / [Content Credentials](docs/glossary.md#provenance-and-content-authenticity)** | Signed manifest in container, watermark as soft binding pointer | Yes | Manifest no, pointer yes | No, needs repository lookup | Imaging first, audio and video growing |
 | **SynthID** | Imperceptible watermark | Google only | Partly | No | Google generative output |
 | **DDEX AI disclosure** | Declared metadata in delivery | No, self-reported | Metadata layer only | n/a | Music |
-| **SMPTE ST 2112 (OBID)** | Inaudible audio watermark carrying identifiers | Identifier only, not an attestation | Yes | Yes | Broadcast ad and program ID |
+| **[SMPTE](docs/glossary.md#organizations-and-standards-bodies) ST 2112 ([OBID](docs/glossary.md#identifiers-and-file-formats))** | Inaudible audio watermark carrying identifiers | Identifier only, not an attestation | Yes | Yes | Broadcast ad and program ID |
 | **Sigil (proposed)** | Signature carried in the signal itself | Yes | Design goal | Design goal | Music and film |
 
 ## Prior art, stated plainly
 
 Inaudible watermark carriage in professional media is not new and is not the contribution
-here. SMPTE ST 2112 already binds Ad-ID and EIDR identifiers into content via inaudible
-audio watermarking. ATSC A/334 and A/335 carry audio and video watermarks in deployed
+here. SMPTE ST 2112 already binds [Ad-ID](docs/glossary.md#identifiers-and-file-formats) and [EIDR](docs/glossary.md#identifiers-and-file-formats) identifiers into content via inaudible
+audio watermarking. [ATSC](docs/glossary.md#organizations-and-standards-bodies) A/334 and A/335 carry audio and video watermarks in deployed
 NextGen TV. Simmons and Winograd have already published a scheme combining C2PA metadata,
 ATSC watermarking, and cryptography for broadcast news.
 
@@ -86,9 +86,9 @@ If that turns out to be wrong, this repository should say so. See
   is a more plausible path than competing. See [docs/spec/06-interop.md](docs/spec/06-interop.md).
 - Detecting AI-generated content by analysis. Sigil verifies claims made at creation time.
   It cannot say anything about a file that carries no signature, in either direction.
-- Proving human origin. A capture attestation establishes that samples passed through a
+- Proving human origin. A [capture attestation](docs/glossary.md#provenance-and-content-authenticity) establishes that samples passed through a
   device, not who or what produced them.
-- DRM, access control, or usage restriction. Sigil attests to origin and nothing else.
+- [DRM](docs/glossary.md#provenance-and-content-authenticity), access control, or usage restriction. Sigil attests to origin and nothing else.
 - Surviving deliberate adversarial removal. See [docs/03-threat-model.md](docs/03-threat-model.md)
   for what is and is not in scope.
 

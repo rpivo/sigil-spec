@@ -2,7 +2,7 @@
 
 > Status: draft. Non-normative.
 
-Sigil is a proposed protocol for carrying a cryptographic attestation of origin inside an
+Sigil is a proposed protocol for carrying a cryptographic [attestation](glossary.md#terms-sigil-defines) of origin inside an
 audio or video signal, imperceptibly, in a form that any adopting vendor can verify.
 
 Its purpose is accountability rather than detection: to make an auditable origin record cheap
@@ -12,8 +12,8 @@ to attach and awkward to omit, not to determine whether any given file was gener
 
 A creator, tool, or model signs a small structured claim about how a recording was made.
 That signature is embedded into the signal itself rather than into the file container, at a
-level below human perception. A verifier reading the file can recover the signature, check
-it against a known public key, and report what the signer claimed. Because the attestation
+level below human perception. A [verifier](glossary.md#terms-sigil-defines) reading the file can recover the signature, check
+it against a known [public key](glossary.md#cryptography-and-specification), and report what the [signer](glossary.md#terms-sigil-defines) claimed. Because the attestation
 travels in the signal and is self-contained, it survives container changes and verifies
 without a network lookup.
 
@@ -24,11 +24,11 @@ discussed side by side. They are independent, and each works without the other.
 
 |  | The signature | The log |
 |---|---|---|
-| **Where it lives** | Inside the audio, as an imperceptible carrier | On a public record, external to the file |
+| **Where it lives** | Inside the audio, as an imperceptible [carrier](glossary.md#terms-sigil-defines) | On a public record, external to the file |
 | **Travels with the file** | Yes | No |
 | **What it says** | A signer claims something about this recording | Content with this hash existed by this date |
 | **Verifying it** | Offline, no lookup required | Requires querying the log |
-| **Who creates it** | A capture device, a DAW, or an accredited signer | A platform, label, or archive |
+| **Who creates it** | A capture device, a [DAW](glossary.md#audio-and-video-production), or an accredited signer | A platform, label, or archive |
 | **When it becomes useful** | Once other vendors adopt it | Immediately, and compounds thereafter |
 
 **The signature answers who vouches for this and what they claim. The log answers when this
@@ -78,12 +78,12 @@ partially attested chain is the normal case rather than an error. See
 
 Sigil is a carrier and attestation layer. It is complementary to, not a replacement for:
 
-- **C2PA**, which provides a richer provenance model and an established manifest format.
-  Sigil could plausibly serve as a registered soft binding algorithm within it.
-- **DDEX**, which provides the music industry vocabulary for AI involvement and the delivery
+- **[C2PA](glossary.md#organizations-and-standards-bodies)**, which provides a richer provenance model and an established [manifest](glossary.md#provenance-and-content-authenticity) format.
+  Sigil could plausibly serve as a registered [soft binding](glossary.md#provenance-and-content-authenticity) algorithm within it.
+- **[DDEX](glossary.md#organizations-and-standards-bodies)**, which provides the music industry vocabulary for AI involvement and the delivery
   pipeline that carries it. Sigil could make a DDEX disclosure verifiable rather than merely
   declared.
-- **SMPTE**, which governs carriage in professional film and television workflows, and which
-  is actively studying how provenance data should flow through MXF.
+- **[SMPTE](glossary.md#organizations-and-standards-bodies)**, which governs carriage in professional film and television workflows, and which
+  is actively studying how provenance data should flow through [MXF](glossary.md#identifiers-and-file-formats).
 
 See [spec/06-interop.md](spec/06-interop.md).

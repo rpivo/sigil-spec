@@ -8,16 +8,16 @@ This document covers what can honestly be claimed about it.
 
 ## Three classes of attestation
 
-The central point: **claims about content the signer did not capture are a different kind of
+The central point: **claims about content the [signer](glossary.md#terms-sigil-defines) did not capture are a different kind of
 claim, and must not share a representation with claims about content it did.**
 
 | Class | Assertion | Strength |
 |---|---|---|
-| **Capture attestation** | A device produced these samples at this time. | Strong. Bound to hardware, made at the moment of capture. |
-| **Timestamp attestation** | This content existed no later than this date. | Strong where the timestamp is independently verifiable and was actually made at the time. |
-| **Provenance assertion** | A party believes something about content it did not witness. | Weak. Reduces entirely to trust in that party and to whatever corroboration is offered. |
+| **[Capture attestation](glossary.md#provenance-and-content-authenticity)** | A device produced these samples at this time. | Strong. Bound to hardware, made at the moment of capture. |
+| **[Timestamp attestation](glossary.md#cryptography-and-specification)** | This content existed no later than this date. | Strong where the timestamp is independently verifiable and was actually made at the time. |
+| **[Provenance assertion](glossary.md#cryptography-and-specification)** | A party believes something about content it did not witness. | Weak. Reduces entirely to trust in that party and to whatever corroboration is offered. |
 
-A verifier that renders all three identically lets the weakest inherit the credibility of the
+A [verifier](glossary.md#terms-sigil-defines) that renders all three identically lets the weakest inherit the credibility of the
 strongest. Any result model has to keep them distinct. See
 [spec/05-verification.md](spec/05-verification.md).
 
@@ -35,9 +35,9 @@ registries, and museum provenance departments all vouch for things they did not 
 the basis of documented evidence standards, accreditation, auditability, and liability.
 Assay offices have marked precious metal on this model since the 1300s, forging the mark is a
 criminal offence, and compulsory hallmarking remains law in the UK. Music already operates
-registries of this kind through ISRC allocation.
+registries of this kind through [ISRC](glossary.md#identifiers-and-file-formats) allocation.
 
-So a governing body administering retroactive attestation is a reasonable design. Two
+So a governing body administering retroactive [attestation](glossary.md#terms-sigil-defines) is a reasonable design. Two
 consequences follow, and neither is a reason to abandon it.
 
 ### The governance becomes the product
@@ -67,7 +67,7 @@ accepted explicitly rather than papered over. See
 
 ### A practical objection
 
-Embedding a watermark alters the audio, and archival practice is strongly against modifying
+Embedding a [watermark](glossary.md#provenance-and-content-authenticity) alters the audio, and archival practice is strongly against modifying
 preserved masters. Retroactive marking realistically applies to distribution copies rather
 than to masters, which raises the question of which version is authoritative.
 
@@ -96,7 +96,7 @@ Governance design should separate those roles wherever the structure permits.
 
 ### The fix worth borrowing
 
-Certificate Transparency did not attempt to prevent misissuance, which proved impossible.
+[Certificate Transparency](glossary.md#cryptography-and-specification) did not attempt to prevent misissuance, which proved impossible.
 It made every issuance public and append-only, so misissuance became detectable and
 attributable after the fact. Browsers now require it.
 
@@ -143,7 +143,7 @@ The properties compare favourably with retroactive signing:
 
 - **No modification of the audio.** Hashing does not alter the recording, so archival
   objections do not apply.
-- **No forgery oracle.** An append-only log cannot be backdated.
+- **No forgery oracle.** An [append-only log](glossary.md#cryptography-and-specification) cannot be backdated.
 - **No hardware and no industry cooperation.** A single catalogue holder can begin alone.
 - **Covers the hard case.** It works precisely for material with no public paper trail.
 - **It freezes the exposed window.** Once the log runs, material published afterwards is
@@ -172,7 +172,7 @@ and absence never becomes informative. There is no adoption threshold that chang
 [03-threat-model.md](03-threat-model.md).
 
 **A signature never means human.** A capture attestation states that samples passed through a
-device. Generated audio played through an attested capture chain produces a valid signature.
+device. Generated audio played through an [attested capture](glossary.md#provenance-and-content-authenticity) chain produces a valid signature.
 Universal adoption makes this claim ubiquitous rather than making it stronger.
 
 The supportable end state is narrower than "AI-generated content becomes identifiable" and is
@@ -195,9 +195,9 @@ does not turn it into one.
 - Whether signer and beneficiary can be separated in practice, given rightsholders hold both
   the catalogue and the strongest interest in its standing.
 - What happens to attestations already made when an accredited signer is compromised or
-  withdrawn. Mass revocation across a back catalogue is a scenario worth designing for
+  withdrawn. Mass [revocation](glossary.md#cryptography-and-specification) across a back catalogue is a scenario worth designing for
   rather than discovering.
 - Whether timestamping should be specified here or simply recommended, given it is useful
-  independently of the carrier.
+  independently of the [carrier](glossary.md#terms-sigil-defines).
 - How a verifier presents an attestation chain mixing all three classes, which will be the
   normal case for catalogue material.

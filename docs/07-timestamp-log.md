@@ -20,14 +20,14 @@ nothing about the content.
 
 The append-only property is mechanical rather than a matter of trust.
 
-Entries are hashed together into a Merkle tree, where each entry feeds into a parent hash and
+Entries are hashed together into a [Merkle tree](glossary.md#cryptography-and-specification), where each entry feeds into a parent hash and
 so on up to a single root representing the whole log. That root is published periodically and
 widely, to multiple independent parties. Once a root is public, no earlier entry can be
 inserted, removed, or altered without changing the root, which every holder of a previous
 root can detect.
 
 Backdating therefore requires forging every published root since the target date, in the
-hands of everyone holding a copy. This is the design behind Certificate Transparency.
+hands of everyone holding a copy. This is the design behind [Certificate Transparency](glossary.md#cryptography-and-specification).
 
 ## What it establishes
 
@@ -42,16 +42,16 @@ attack must defeat.
 
 ## Why a signature's own timestamp is not sufficient
 
-An attestation can contain a date, and once signed that date cannot be altered without
+An [attestation](glossary.md#terms-sigil-defines) can contain a date, and once signed that date cannot be altered without
 invalidating the signature.
 
-It nonetheless remains **the signer's assertion**. A signer with an incorrect clock, a
+It nonetheless remains **the [signer](glossary.md#terms-sigil-defines)'s assertion**. A signer with an incorrect clock, a
 manipulated clock, or bad intent can place any date in the payload and sign it validly. The
 signature establishes that the signer asserted the date. It does not establish that the date
 is true.
 
 Trustworthy time requires an anchor outside the signer's control. This is why RFC 3161
-timestamp authorities exist, and why code signing relies on trusted timestamping rather than
+timestamp authorities exist, and why code signing relies on [trusted timestamping](glossary.md#cryptography-and-specification) rather than
 on the signing machine's clock.
 
 The log is therefore not a duplicate of information already carried in the attestation. It is
@@ -74,7 +74,7 @@ audio.
 | The era after logging begins | Yes | Absence of an entry becomes anomalous, given sufficient coverage. |
 
 Existing catalogue therefore continues to depend on documentary corroboration and accredited
-provenance assertions. See [06-existing-recordings.md](06-existing-recordings.md).
+[provenance assertions](glossary.md#cryptography-and-specification). See [06-existing-recordings.md](06-existing-recordings.md).
 
 **The log's function is to create the future archive rather than to validate the existing
 one.** Material recorded and logged now becomes material with provable age later, and only if
@@ -139,7 +139,7 @@ minimal identifiers, and publish a signed Merkle root daily.
 
 It is the only part of the protocol that:
 
-- Requires nothing from hardware makers, DAW vendors, or standards bodies.
+- Requires nothing from hardware makers, [DAW](glossary.md#audio-and-video-production) vendors, or standards bodies.
 - Modifies no audio, so archival objections do not apply.
 - Delivers value to a single operator immediately rather than after adoption.
 - Produces a running system, which a standards proposal needs and a document cannot supply.
@@ -156,4 +156,4 @@ of coverage that cannot later be recovered.
 - What identifying metadata accompanies an entry, and the privacy consequences of publishing
   it.
 - Whether timestamp and transparency logs share infrastructure.
-- What a verifier does with a fingerprint match that is not an exact hash match.
+- What a [verifier](glossary.md#terms-sigil-defines) does with a fingerprint match that is not an exact hash match.

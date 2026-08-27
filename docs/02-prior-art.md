@@ -16,23 +16,23 @@ where it stops.
 **What it is.** An open, royalty-free standard from the Coalition for Content Provenance and
 Authenticity, formed out of Adobe's Content Authenticity Initiative and Project Origin.
 Members include Adobe, Microsoft, Google, OpenAI, Sony, Nikon, Leica, Intel, BBC, Truepic,
-and IPTC. It has a formal conformance program and thousands of CAI member organizations.
+and [IPTC](glossary.md#organizations-and-standards-bodies). It has a formal [conformance program](glossary.md#cryptography-and-specification) and thousands of [CAI](glossary.md#organizations-and-standards-bodies) member organizations.
 
-**How it binds.** Cryptographically signed metadata structures called C2PA manifests,
-embedded in the file container as JUMBF. Each edit appends to the provenance chain.
+**How it binds.** Cryptographically signed metadata structures called [C2PA](glossary.md#organizations-and-standards-bodies) [manifests](glossary.md#provenance-and-content-authenticity),
+embedded in the file container as [JUMBF](glossary.md#identifiers-and-file-formats). Each edit appends to the provenance chain.
 
-**Watermarking role.** Watermarks and content fingerprints appear as *soft bindings*, used to
-re-discover a manifest that has been stripped from a file. The Soft Binding Resolution API
+**Watermarking role.** [Watermarks](glossary.md#provenance-and-content-authenticity) and content fingerprints appear as *[soft bindings](glossary.md#provenance-and-content-authenticity)*, used to
+re-discover a manifest that has been stripped from a file. The [Soft Binding Resolution API](glossary.md#provenance-and-content-authenticity)
 gives clients a standard way to retrieve a manifest from a repository. Watermark vendors
 implement against an approved algorithm list. A manifest with one or more soft bindings is
-termed a Durable Content Credential.
+termed a [Durable Content Credential](glossary.md#provenance-and-content-authenticity).
 
 **Where it stops.**
 - The primary binding is destroyed by any non-C2PA-aware re-encode.
 - The soft binding carries a pointer, not the proof, so verification needs a network lookup
   against a live repository.
 - Maturity is strongest in imaging. Audio and video are in the spec and progressing, with
-  v2.3 adding live video streaming support and Sony shipping Content Credentials in the
+  v2.3 adding live video streaming support and Sony shipping [Content Credentials](glossary.md#provenance-and-content-authenticity) in the
   PXW-Z300, but professional music workflows remain thin.
 
 **Relationship to Sigil.** Complementary. Registering as a soft binding algorithm is a more
@@ -59,7 +59,7 @@ construction. It is the thing Sigil is trying not to be.
 ## DDEX AI disclosure
 
 **What it is.** An industry-standard metadata vocabulary for AI involvement in a recording,
-developed through DDEX with Spotify's participation and announced September 2025. Five
+developed through [DDEX](glossary.md#organizations-and-standards-bodies) with Spotify's participation and announced September 2025. Five
 categories: AI-generated vocals, AI instrumentation, AI composition, AI post-production, and
 AI lyrical content. Delivered through distributor upload workflows and surfaced in credits.
 
@@ -75,16 +75,16 @@ vocabulary with the DDEX categories is a live design option.
 
 ## SMPTE ST 2112, Open Binding of IDentifiers (OBID)
 
-**What it is.** A published SMPTE standard family, ST 2112-10, RP 2112-11, ST 2112-20, and
-RP 2112-21, that binds Ad-ID identifiers to commercials and EIDR codes to programming using
+**What it is.** A published [SMPTE](glossary.md#organizations-and-standards-bodies) standard family, ST 2112-10, RP 2112-11, ST 2112-20, and
+RP 2112-21, that binds [Ad-ID](glossary.md#identifiers-and-file-formats) identifiers to commercials and [EIDR](glossary.md#identifiers-and-file-formats) codes to programming using
 inaudible audio watermarking. The watermarking technology is Kantar Media's, available for
-licensing. Originated in CIMM's TAXI Complete initiative.
+licensing. Originated in [CIMM](glossary.md#organizations-and-standards-bodies)'s [TAXI](glossary.md#identifiers-and-file-formats) Complete initiative.
 
-**Where it stops.** It carries *identifiers*, not attestations. Purpose-built for real-time
-content identification and audience measurement, not authenticity. A recovered OBID payload
+**Where it stops.** It carries *identifiers*, not [attestations](glossary.md#terms-sigil-defines). Purpose-built for real-time
+content identification and audience measurement, not authenticity. A recovered [OBID](glossary.md#identifiers-and-file-formats) payload
 tells you which asset this is, not who vouched for it or how it was made.
 
-**Relationship to Sigil.** This is the closest existing proof that the carrier mechanism
+**Relationship to Sigil.** This is the closest existing proof that the [carrier](glossary.md#terms-sigil-defines) mechanism
 works at professional scale. It substantially de-risks the embedding layer and it means the
 carrier is not where Sigil's contribution lies. Study before specifying anything.
 
@@ -92,7 +92,7 @@ carrier is not where Sigil's contribution lies. Study before specifying anything
 
 ## ATSC A/334 and A/335
 
-**What it is.** Audio and video watermark standards deployed in ATSC 3.0 NextGen TV,
+**What it is.** Audio and video watermark standards deployed in [ATSC](glossary.md#organizations-and-standards-bodies) 3.0 NextGen TV,
 carrying signaling and identification data through the broadcast chain.
 
 **Where it stops.** Same shape as OBID. Signaling and identification, not provenance
@@ -118,11 +118,11 @@ be stated relative to this paper.
 ## SMPTE Content Provenance and Authenticity in Media Study Group
 
 **What it is.** A SMPTE study group formed 16 July 2025, headed by Thomas Bause Mason,
-SMPTE's director of standards, with participants from Ross Video, Sony, Adobe, the EBU, and
+SMPTE's director of standards, with participants from Ross Video, Sony, Adobe, the [EBU](glossary.md#organizations-and-standards-bodies), and
 Metaglue. Charter is to identify relevant provenance technologies, review work by other
 professional media organizations, gather use cases and requirements, and recommend where
 SMPTE should update or create standards. A flagged priority is carriage of provenance
-information in MXF, described as an urgent industry need.
+information in [MXF](glossary.md#identifiers-and-file-formats), described as an urgent industry need.
 
 **Status.** Pre-standard. SMPTE has indicated it does not intend to invent a competing
 scheme, but rather to ensure its standards can carry whatever the market adopts, plausibly
