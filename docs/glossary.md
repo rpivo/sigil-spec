@@ -30,7 +30,7 @@ These are restated for convenience only. See
 
 | Term | Short meaning |
 |---|---|
-| **Attestation** *[Sigil]* | A claim plus its signature and content anchor. The thing that travels in the signal. |
+| **Attestation** *[Sigil]* | A claim plus its signature and content anchor. The thing that travels in the audio/video signal. |
 | **Carrier** *[Sigil]* | The imperceptible channel in the signal that conveys an attestation. |
 | **Claim** *[Sigil]* | The structured assertion a signer makes about a recording. |
 | **Content anchor** *[Sigil]* | The content-derived value tying an attestation to one specific recording. Prevents transplanting a valid signature onto different content. |
