@@ -61,7 +61,9 @@ gap where it was, or accepts weaker evidence, which dilutes the meaning of its m
 material where it was rigorous.
 
 The corroborated and uncorroborated cases therefore need separate treatment rather than a
-single policy.
+single policy. The residual exploit in the uncorroborated case has no available fix and is
+accepted explicitly rather than papered over. See
+[03-threat-model.md](03-threat-model.md).
 
 ### A practical objection
 

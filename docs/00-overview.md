@@ -5,6 +5,9 @@
 Sigil is a proposed protocol for carrying a cryptographic attestation of origin inside an
 audio or video signal, imperceptibly, in a form that any adopting vendor can verify.
 
+Its purpose is accountability rather than detection: to make an auditable origin record cheap
+to attach and awkward to omit, not to determine whether any given file was generated.
+
 ## In one paragraph
 
 A creator, tool, or model signs a small structured claim about how a recording was made.

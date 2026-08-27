@@ -113,6 +113,54 @@ Those two requirements pull in opposite directions and the tension is the centra
 problem of the design. It is unresolved. See
 [notes/open-questions.md](notes/open-questions.md).
 
+## Accepted risks
+
+Some attacks have no available defence. Naming them and accepting them explicitly is
+preferable to implying a coverage the protocol does not have.
+
+### Fabricated historical provenance
+
+A party presents recently generated material as an old recording, supported by manufactured
+documentary evidence, and obtains a provenance assertion for it. No process reliably prevents
+this. Forensic examination of physical media is costly and defeatable, and documentary
+evidence can be constructed.
+
+**Accepted, on the following grounds.**
+
+- *Economically self-limiting.* The deception only pays where material is valuable
+  specifically because of its claimed origin, which chiefly means significant lost
+  recordings. That category attracts scrutiny in proportion to its value, so the
+  highest-payoff cases are the most closely examined.
+- *Shrinking against a growing evidence base.* Prospective timestamping accumulates from the
+  moment it begins. The longer the log runs, the more anomalous an unlogged claim of age
+  becomes, without anyone exercising judgment. See
+  [06-existing-recordings.md](06-existing-recordings.md).
+- *Declining incentive.* Passing generated material off as historical pays only while
+  disclosure carries stigma. As disclosure normalises, the return falls.
+- *Detectable after the fact.* Where retroactive attestations are publicly logged with their
+  evidence basis, a fabrication is discoverable and attributable even though it was not
+  preventable.
+
+**Explicitly not relied upon:** stylistic analysis of the recording. Period pastiche is among
+the strongest capabilities of generative models and improves with model quality, so this
+exploit becomes easier over time rather than harder. Stylistic adjudication also requires
+expert judgment that does not scale, is subjective, and would penalise genuinely
+anachronistic work, which is disproportionately the culturally significant kind.
+
+### Non-participating generators
+
+Content from models that do not watermark their output arrives unmarked and indistinguishable
+from unmarked historical material. Accepted, because the protocol is a mechanism for
+accountability among participants and was never a detector of parties who decline to
+participate. See [06-existing-recordings.md](06-existing-recordings.md).
+
+### Determined carrier removal
+
+An adversary controlling a file and willing to degrade it can defeat any imperceptible
+carrier. Accepted, on the grounds that the resulting file is unsigned, and unsigned content
+carries no adverse inference, so removal returns the file to the status quo rather than
+gaining the adversary anything beyond the loss of a positive signal.
+
 ## Prior work to review
 
 - Diffusion-based image manipulation and failure modes of robust watermarking, arXiv 2603.12949
