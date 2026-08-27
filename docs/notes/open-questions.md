@@ -60,10 +60,20 @@ See [../06-existing-recordings.md](../06-existing-recordings.md).
 
 26. Whether retroactive provenance assertions belong in this protocol, or are better left to
     existing rights and registration systems.
-27. What corroborating evidence a provenance assertion must carry to be worth anything.
-28. Whether prospective timestamping should be specified here or recommended alongside,
+27. What corroborating evidence a provenance assertion must carry to be worth anything, and
+    whether the standard should differ for corroborated and uncorroborated material.
+28. Who accredits retroactive signers. Whether an existing registry body such as an ISRC
+    agency could take the role rather than a new institution being founded.
+29. Whether signer and beneficiary can be separated, given rightsholders hold both the
+    catalogue and the strongest interest in its standing.
+30. What happens to existing attestations when an accredited signer is compromised or
+    withdrawn. Mass revocation across a back catalogue is worth designing for rather than
+    discovering.
+31. Whether every retroactive attestation should be publicly logged, following Certificate
+    Transparency, and whether that log is the same one used for timestamping.
+32. Whether prospective timestamping should be specified here or recommended alongside,
     given it is useful independently of the carrier and deployable immediately.
-29. How a verifier presents a chain mixing capture attestations, timestamps, and provenance
+33. How a verifier presents a chain mixing capture attestations, timestamps, and provenance
     assertions, which is the normal case for catalogue material.
 
 ## Governance

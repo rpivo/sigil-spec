@@ -131,6 +131,8 @@ For readers arriving from music or film.
 | **CBOR** *[IETF]* | Concise Binary Object Representation, RFC 8949. A compact binary data format. A candidate payload encoding because carrier capacity is tight. |
 | **COSE** *[IETF]* | CBOR Object Signing and Encryption, RFC 9052. Standard structures for signing CBOR data. |
 | **Conformance program** *[general]* | The process deciding who may implement a standard and hold signing keys. C2PA runs one. A signature means little without a process governing who holds keys. |
+| **Certificate authority** *[general]* | A body that vouches for identities it did not itself establish, on the basis of a documented process. The closest existing analogue to an accredited retroactive signer, including in its failure modes. |
+| **Certificate Transparency** *[general]* | RFC 6962. Public append-only logging of issued certificates, making bad issuance detectable and attributable rather than attempting to prevent it. The model proposed for logging retroactive attestations. |
 | **Certificate hierarchy** *[general]* | A trust model where authorities vouch for signers in a chain up to a trusted root. One candidate trust model for Sigil. |
 | **Fail closed** *[general]* | On error or ambiguity, report failure rather than success. Requirement R7: a damaged carrier must never yield a false valid result. |
 | **Provenance assertion** *[Sigil]* | A claim by a party about content it did not capture. Reduces to trust in that party plus whatever corroboration is offered. Must never be presented as equivalent to a capture attestation. See [06-existing-recordings.md](06-existing-recordings.md). |

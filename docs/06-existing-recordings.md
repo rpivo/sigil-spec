@@ -21,40 +21,83 @@ A verifier that renders all three identically lets the weakest inherit the credi
 strongest. Any result model has to keep them distinct. See
 [spec/05-verification.md](spec/05-verification.md).
 
-## Retroactive signing and the forgery oracle
+## Retroactive attestation
 
-It is tempting to close the back catalogue gap by signing existing recordings after the fact:
-older work is known not to be generated, so mark it accordingly.
+It is tempting to close the back catalogue gap by attesting to existing recordings after the
+fact: older work is known not to be generated, so mark it accordingly.
 
-The difficulty is that **a capability to retroactively sign unattested content is a
-capability to sign anything.** Nothing cryptographically distinguishes a retroactive
-signature on a genuine 1973 master from one on material generated last week to resemble it.
-Both verify. The only separation is the judgment of the key holder, which means retroactive
-attestation is a statement about the signer rather than about the recording.
+The mechanism is not cryptographic. Nothing distinguishes a retroactive signature on a genuine
+1973 master from one on material generated last week to resemble it. Both verify. The
+separation has to come from process.
 
-This does not rule the practice out. It establishes that a retroactive claim must be
-represented as a provenance assertion, must carry the basis on which it is made, and must
-never be presented to an end user as equivalent to a capture attestation.
+**That is a normal and workable arrangement.** Certificate authorities, notaries, land
+registries, and museum provenance departments all vouch for things they did not witness, on
+the basis of documented evidence standards, accreditation, auditability, and liability.
+Assay offices have marked precious metal on this model since the 1300s, forging the mark is a
+criminal offence, and compulsory hallmarking remains law in the UK. Music already operates
+registries of this kind through ISRC allocation.
 
-### Where corroboration exists
+So a governing body administering retroactive attestation is a reasonable design. Two
+consequences follow, and neither is a reason to abandon it.
 
-Commercially released material has a genuine, auditable evidence trail that no party to the
-protocol controls: ISRC registration, copyright deposit, physical pressings, chart and
-distribution records. A provenance assertion that cites such evidence can be checked
-independently, which makes it considerably stronger than bare assertion.
+### The governance becomes the product
 
-### Where it does not
+If a body performs this work, the protocol's value in this area rests on that body's evidence
+standards rather than on its cryptography, which merely records the decisions. Establishing
+such a body is a substantially larger undertaking than publishing a specification, and is
+better sequenced after something is running. See [spec/04-keys-and-trust.md](spec/04-keys-and-trust.md).
 
-Unreleased material, demos, session tapes, field recordings, and personal archives have no
-comparable public record. This is where a retroactive signature would carry the most weight
-and warrant the least, and any policy on retroactive attestation should treat corroborated
-and uncorroborated claims separately.
+### Process evaluates evidence, it does not create it
+
+Where corroboration exists, a body has real material to assess: ISRC registration, copyright
+deposit, physical pressings, distribution and chart records. Rigorous process, defensible
+outcome.
+
+Where it does not, consider what the body actually does. Presented with an undocumented demo
+said to date from 1997, which is in fact recent material printed to tape, no available step
+reliably catches it. Forensic examination of media stock is costly and defeatable, and
+documentary evidence can be manufactured. The body either declines the category, leaving the
+gap where it was, or accepts weaker evidence, which dilutes the meaning of its mark on the
+material where it was rigorous.
+
+The corroborated and uncorroborated cases therefore need separate treatment rather than a
+single policy.
 
 ### A practical objection
 
 Embedding a watermark alters the audio, and archival practice is strongly against modifying
 preserved masters. Retroactive marking realistically applies to distribution copies rather
 than to masters, which raises the question of which version is authoritative.
+
+## Learning from the certificate authority failures
+
+The design here shares a structural property with the Web PKI: **any accredited signer could
+vouch for any recording.** That property, not weak cryptography, produced that ecosystem's
+worst failures. DigiNotar was compromised in 2011 and issued fraudulent certificates for
+Google domains, used against users in Iran, and the company collapsed. Symantec was
+progressively distrusted by major browsers over sustained misissuance. Trust degraded to the
+least careful accredited party and every relying party inherited the result.
+
+Scale makes this sharper. A body cannot individually adjudicate hundreds of millions of
+recordings, so it delegates to labels and archives, and rigour varies across delegates.
+
+There is also an incentive constraint. Where a rightsholder vouches for its own catalogue,
+signer and beneficiary are the same party, and disclosure may be commercially unwelcome.
+Governance design should separate those roles wherever the structure permits.
+
+### The fix worth borrowing
+
+Certificate Transparency did not attempt to prevent misissuance, which proved impossible.
+It made every issuance public and append-only, so misissuance became detectable and
+attributable after the fact. Browsers now require it.
+
+Applied here: **every retroactive attestation is logged publicly, permanently, with its
+evidence basis and its accredited signer.** A bad vouching cannot be prevented. It can be made
+discoverable, patterns of them visible, and each signer's record public. That converts an
+unfalsifiable claim into an auditable one.
+
+This uses the same append-only infrastructure as the timestamping proposal below, so the two
+are complementary rather than competing.
 
 ## Timestamping: available now, and stronger
 
@@ -108,7 +151,15 @@ does not turn it into one.
 
 - Whether retroactive provenance assertions belong in this protocol at all, or whether they
   are better left to existing rights and registration systems.
-- What corroborating evidence a provenance assertion should be required to carry.
+- What corroborating evidence a provenance assertion should be required to carry, and whether
+  the standard differs between corroborated and uncorroborated material.
+- Who accredits retroactive signers, and whether an existing body such as an ISRC agency
+  could take the role rather than a new institution being founded.
+- Whether signer and beneficiary can be separated in practice, given rightsholders hold both
+  the catalogue and the strongest interest in its standing.
+- What happens to attestations already made when an accredited signer is compromised or
+  withdrawn. Mass revocation across a back catalogue is a scenario worth designing for
+  rather than discovering.
 - Whether timestamping should be specified here or simply recommended, given it is useful
   independently of the carrier.
 - How a verifier presents an attestation chain mixing all three classes, which will be the
