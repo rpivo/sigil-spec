@@ -15,6 +15,14 @@ BCP 14 (RFC 2119, RFC 8174) when, and only when, they appear in all capitals.
 
 ## Terminology
 
+This section defines the terms Sigil itself introduces. When these sections become
+normative, the definitions below are binding.
+
+Terminology **borrowed** from other bodies, along with acronyms and domain jargon from both
+the media production and cryptography sides, is collected in
+[../glossary.md](../glossary.md). Those entries are informal restatements for readability;
+the owning body's specification governs.
+
 Terms are chosen to avoid collision with existing standards. Note that both C2PA and SMPTE
 use *binding* as a term of art, C2PA for soft bindings and SMPTE for Open Binding of
 IDentifiers, so this document avoids the bare word.

@@ -3,6 +3,10 @@
 This is an early-stage proposal, not a maintained standard. The most valuable contribution
 right now is a good argument that it is wrong.
 
+This repository deliberately addresses two audiences with different vocabularies. If a term
+is unfamiliar, check [docs/glossary.md](docs/glossary.md) before assuming the document is
+not for you.
+
 ## Especially wanted
 
 - **Corrections to [docs/02-prior-art.md](docs/02-prior-art.md).** If a system already does
@@ -17,6 +21,8 @@ right now is a good argument that it is wrong.
   metadata die in a delivery pipeline.
 - **Patent landscape.** Watermarking is densely patented. Pointers to relevant prior filings
   are useful.
+- **Glossary corrections.** If [docs/glossary.md](docs/glossary.md) misstates what another
+  standards body means by one of its own terms, that is worth fixing promptly.
 
 ## Less useful right now
 
