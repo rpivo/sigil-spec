@@ -42,6 +42,13 @@ the audio, and nothing can be checked.
 Sigil aims at the space between them: the attestation itself travels in the signal, and it
 verifies standalone.
 
+## Architecture in one line
+
+Each stage of the production chain attests to what it observed, and a released file carries a
+summary of that chain rather than a single verdict. See
+[docs/05-chain-of-custody.md](docs/05-chain-of-custody.md), which also records the limits
+found while examining it, including where in a signal path attestation can begin at all.
+
 ## How this differs from existing work
 
 | System | Mechanism | Verifiable? | Survives transcode? | Offline? | Domain |
@@ -87,6 +94,7 @@ docs/
   02-prior-art.md         Survey of C2PA, SynthID, DDEX, SMPTE, ATSC
   03-threat-model.md      Adversaries, assumptions, explicit non-defenses
   04-requirements.md      What a viable protocol has to satisfy
+  05-chain-of-custody.md  How attestations accumulate across the production chain
   spec/
     00-conventions.md     Terminology and document conventions
     01-payload.md         What the attestation contains

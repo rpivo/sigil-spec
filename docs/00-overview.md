@@ -35,6 +35,13 @@ Three outcomes, and the distinction between the second and third matters:
 Any user-facing implementation must not collapse outcome 2 into "not AI generated." That
 inference is unsupported and is the most likely way this protocol gets misused in practice.
 
+## Multiple signers
+
+A recording usually passes through several parties before release, and each may attest to
+what it observed. Verification therefore reports a chain rather than a single claim, and a
+partially attested chain is the normal case rather than an error. See
+[05-chain-of-custody.md](05-chain-of-custody.md).
+
 ## Where it fits
 
 Sigil is a carrier and attestation layer. It is complementary to, not a replacement for:

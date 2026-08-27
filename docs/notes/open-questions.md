@@ -33,6 +33,21 @@
    Does a later signer overwrite, append, or layer?
 10. Behavior on sparse material such as solo instruments, ambient, and near-silence.
 
+## Chain of custody
+
+See [../05-chain-of-custody.md](../05-chain-of-custody.md).
+
+18. Whether each stage re-signs, vouching for what it verified, or whether attestations
+    accumulate independently and are evaluated together.
+19. How a chain summary stays within carrier capacity as session complexity grows.
+20. What a verifier reports for a partially attested chain, which is the common case.
+21. Whether plugin and virtual instrument vendors can participate, and what a plugin
+    attestation would assert.
+22. How a chain survives stem delivery, where a release is assembled from separately
+    exported files.
+23. Whether the assurance tiers should map onto C2PA assurance levels rather than being
+    defined independently.
+
 ## Governance
 
 11. Trust model. Certificate hierarchy, signer registry, or decentralized.

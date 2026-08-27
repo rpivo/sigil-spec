@@ -32,6 +32,19 @@ Sigil can and cannot claim.
 - **Protection against a compromised or dishonest signer.** Key compromise is handled by
   revocation, which is a mitigation and not a prevention.
 
+## Two structural limits
+
+**The analog hole.** A capture device cannot verify what feeds its analog input. Audio played
+into a microphone or patched into an instrument input is indistinguishable from a live
+performance. Capture attestation therefore claims that samples entered the digital domain
+through an identified device, and never that a human produced them. C2PA capture hardware
+operates under the same bound.
+
+**Weakest-link degradation.** In a chain of custody, trust degrades to the least trustworthy
+participant. Any party able to induce a trusted signer to sign obtains a valid signature. The
+mitigation is not technical but definitional: honest declaration of unattested inputs must be
+a conformance requirement. See [05-chain-of-custody.md](05-chain-of-custody.md).
+
 ## Adversaries to characterize
 
 Each of these needs a written section. They are listed rather than resolved.
@@ -47,6 +60,9 @@ Each of these needs a written section. They are listed rather than resolved.
    processing, without any single step appearing adversarial.
 5. **The false accuser.** Wants to make legitimate content fail verification in order to
    discredit it.
+6. **The launderer of provenance.** Wants to pass unattested or generated content through a
+   trusted signer so it emerges with a valid attestation. Distinct from the forger: no key is
+   compromised and no signature is faked. The chain is used exactly as designed.
 
 ## Known open problem: the transplant attack
 

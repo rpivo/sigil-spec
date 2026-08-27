@@ -65,6 +65,10 @@ both C2PA and SMPTE. See [spec/00-conventions.md](spec/00-conventions.md).
 |---|---|
 | **Content Credentials** *[C2PA]* | The consumer-facing name for C2PA provenance data attached to a file. |
 | **Content fingerprinting** *[general]* | Deriving an identifying value from the content itself, then matching it against a database. Unlike a watermark, it adds nothing to the file. C2PA permits it as a soft binding. |
+| **Analog hole** *[general]* | The unavoidable gap where content leaves the digital domain and can be re-captured. Any source can be played into an analog input, so capture attestation cannot establish that a performance was live. |
+| **Assurance level** *[C2PA]* | A measure of how strongly an attestation is protected, for example whether signing occurs in dedicated hardware. Google integrated Assurance Level 2 into Pixel camera hardware. |
+| **Attested capture** *[general]* | Signing at the point content enters the digital domain, so the capture device vouches for the samples it produced. |
+| **Chain of custody** *[general]* | A record of each party that handled content and what each attested to. See [05-chain-of-custody.md](05-chain-of-custody.md). |
 | **DRM** *[general]* | Digital Rights Management. Technology restricting how content may be used or copied. An explicit non-goal for Sigil, which attests to origin and does not restrict anything. The distinction matters because a protocol that embeds data in media is routinely mistaken for DRM. |
 | **Durable Content Credential** *[C2PA]* | A Content Credential with one or more soft bindings, so the manifest can be rediscovered after the embedded metadata is stripped. |
 | **Hard binding** *[C2PA]* | Provenance data cryptographically bound into the asset itself. Contrast soft binding. |
@@ -96,8 +100,10 @@ For readers arriving from cryptography or standards work.
 
 | Term | Meaning |
 |---|---|
+| **A/D converter** | Analog-to-digital converter. Turns an analog signal into samples. The earliest point in a conventional signal path where attestation is possible. |
 | **Adaptive streaming** | Delivering multiple encodings at different bitrates so a player can switch based on bandwidth. Means one release exists as many re-encoded files. |
 | **Bit depth** | Bits per audio sample, commonly 16 or 24. Conversion between depths is routine and a Sigil carrier must survive it. |
+| **DAW** | Digital Audio Workstation. The recording and production environment, such as Ableton Live or Pro Tools. The only party observing every source in a session. |
 | **Bounce** | Rendering a mix or session to a single audio file. A common point where metadata is lost. |
 | **Colour grading** | Adjusting colour and tone in post. Aggressive enough that it is a serious robustness challenge for a video carrier. |
 | **Finishing** | The final stage of picture post before delivery. |
@@ -106,7 +112,8 @@ For readers arriving from cryptography or standards work.
 | **Mastering** | The final audio stage before distribution. Mastering engineers are the gatekeepers for anything claiming inaudibility, since they monitor on reference systems where artifacts are audible. |
 | **Perceptual masking** | The effect where one sound or image detail hides another. The mechanism that makes imperceptible embedding possible, and the reason sparse material such as solo piano or near-silence is the hard case. |
 | **Sample rate** | Audio samples per second, commonly 44.1 or 48 kHz. Conversion is routine. |
-| **Stem** | A submix, for example all drums or all vocals, delivered separately for later mixing. |
+| **Secure element** | Tamper-resistant hardware holding a device key so it cannot be extracted. What a capture device would need in order to attest. |
+| **Stem** | A submix, for example all drums or all vocals, delivered separately for later mixing. Complicates chain of custody, since a release may be assembled from separately exported files. |
 | **Transcode** | Re-encoding from one format or bitrate to another. The single most common way provenance metadata is destroyed. |
 
 ---
@@ -124,6 +131,7 @@ For readers arriving from music or film.
 | **Conformance program** *[general]* | The process deciding who may implement a standard and hold signing keys. C2PA runs one. A signature means little without a process governing who holds keys. |
 | **Certificate hierarchy** *[general]* | A trust model where authorities vouch for signers in a chain up to a trusted root. One candidate trust model for Sigil. |
 | **Fail closed** *[general]* | On error or ambiguity, report failure rather than success. Requirement R7: a damaged carrier must never yield a false valid result. |
+| **Provenance laundering** *[general]* | Passing unattested content through a trusted signer so it emerges with a valid attestation. Requires no forgery: the chain is used as designed. See [03-threat-model.md](03-threat-model.md). |
 | **Public key** *[general]* | The half of a keypair used to verify a signature. Distributable freely, which is what makes offline verification possible. |
 | **Revocation** *[general]* | Declaring a key no longer trusted, typically after compromise. A mitigation, not a prevention: signatures made before revocation still need a policy. |
 | **Transplant attack** *[general]* | Lifting a valid signature from one recording and attaching it to another. Prevented by the content anchor. See [03-threat-model.md](03-threat-model.md). |
