@@ -68,9 +68,37 @@ from a product, and is required for IETF standards-track advancement.
 
 ## The bodies, and how each takes input
 
-Access is cheaper and more open than generally assumed.
+Access is cheaper and more open than generally assumed. Note that the ordering below is by
+domain fit, not by urgency; only SMPTE has a closing window.
 
-### SMPTE, time-sensitive
+| Body | Domain | Fit | Barrier |
+|---|---|---|---|
+| **DDEX** | Music value chain, metadata and delivery | Highest substantive fit | Organisational membership |
+| **AES** | Professional audio engineering | The technical audio layer | Lowest. Individual, open, anyone may propose work |
+| **SMPTE** | Film and television, including audio for both | The film half, plus the ST 2112 precedent | ~$775/year for non-members |
+| **C2PA** | Cross-industry provenance | Interop target rather than a venue | Free and open |
+
+### AES, lowest barrier
+
+The Audio Engineering Society is the professional audio standards body, and the most
+accessible route available.
+
+- AESSC working group membership is open to all directly and materially affected individuals.
+  AES membership is encouraged but not required.
+- **Initiation of work may be proposed by any person**, member or not, provided the proposal
+  falls within audio engineering or allied arts and sciences.
+- Around eleven working groups and 1,200 registered participants, covering digital audio
+  measurement, interfaces and synchronisation, file exchange, and pro-audio data networks.
+- AES is an individual membership society rather than an organisational one, so participation
+  is personal. Individuals may informally represent an organisation's positions.
+
+Audio watermarking falls within scope. AES52 already addresses embedding data in AES3 streams,
+and the AES library carries watermarking research.
+
+For an audio-first protocol this is the natural first conversation: the barrier is near zero
+and it is the correct venue for the audio engineering questions the design raises.
+
+### SMPTE, time-sensitive rather than most relevant
 
 The Content Provenance and Authenticity in Media study group is active and gathering use cases
 and requirements, with its report partially drafted. Contributions during drafting influence
@@ -81,8 +109,13 @@ the output; contributions afterwards do not.
   contributors not expected to join the standards community.
 - Headed by Thomas Bause Mason, SMPTE's director of standards.
 
-An open door with a closing window and a negligible price. Highest value per unit of effort
-currently available.
+An open door with a closing window and a negligible price.
+
+**Scope caveat.** SMPTE covers audio substantially, but audio for motion picture and
+television: ST 2110-30 for PCM over IP, ST 337 for non-PCM in AES3, ST 2098-2 for immersive
+cinema audio, and ST 2112 for audio watermarking. It does not cover the music industry.
+SMPTE's place on this list rests on timing and on the ST 2112 precedent, not on being the
+primary venue for a music-first protocol.
 
 ### DDEX, best substantive fit
 
@@ -121,12 +154,15 @@ in the SMPTE study group.
 ## Immediate actions
 
 1. Read Simmons and Winograd in full. Any informed reviewer will raise it.
-2. Contact SMPTE regarding study group participation. Time-sensitive.
-3. Determine whether catalog.fm already implements a DDEX standard, which decides the
+2. Approach AES. Lowest barrier of any venue, correct home for the audio engineering
+   questions, and open to proposals from any person.
+3. Contact SMPTE regarding study group participation. Time-sensitive, and the only item with
+   a closing window.
+4. Determine whether catalog.fm already implements a DDEX standard, which decides the
    membership route.
-4. Begin operating the log.
-5. Measure carrier capacity, or obtain the figures from a watermarking vendor.
-6. Conduct a patent search before further investment. See open question 14.
+5. Begin operating the log.
+6. Measure carrier capacity, or obtain the figures from a watermarking vendor.
+7. Conduct a patent search before further investment. See open question 14.
 
 ## Realistic expectation
 

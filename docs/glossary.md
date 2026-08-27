@@ -48,6 +48,7 @@ both C2PA and SMPTE. See [spec/00-conventions.md](spec/00-conventions.md).
 | Term | Meaning |
 |---|---|
 | **ATSC** | Advanced Television Systems Committee. Sets digital television broadcast standards in North America, including the ATSC 3.0 / NextGen TV suite. |
+| **AES** | Audio Engineering Society. The professional audio standards body. Individual rather than organisational membership; its standards committee working groups are open to affected individuals, and anyone may propose new work. Not to be confused with the AES encryption standard. |
 | **C2PA** | Coalition for Content Provenance and Authenticity. Publishes the open, royalty-free Content Credentials standard. Formed from Adobe's CAI and Project Origin. |
 | **CAI** | Content Authenticity Initiative. Adobe-led membership community promoting Content Credentials. Distinct from C2PA, which develops the specification itself. |
 | **CIMM** | Coalition for Innovative Media Measurement. US media measurement body. Originated the TAXI initiative that led to SMPTE ST 2112. |
